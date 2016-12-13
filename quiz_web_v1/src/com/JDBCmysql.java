@@ -40,7 +40,7 @@ public class JDBCmysql {
 
 		}catch(Exception e){                                                    // 예외가 발생하면 예외 상황을 처리한다.
 			e.printStackTrace();
-			System.out.println("member 테이블 호출에 실패했습니다.");
+			System.out.println("데이터베이스 호출에 실패했습니다.");
 
 		}finally{                                                            // 쿼리가 성공 또는 실패에 상관없이 사용한 자원을 해제 한다.  (순서중요)
 			if(rs != null) try{rs.close();}catch(SQLException sqle){}            // Resultset 객체 해제
