@@ -12,7 +12,7 @@ public class JDBCmysql {
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	
-	public Connection JDBCmysql(){
+	public Connection mysqlConnect(){
 		
 		try{
 			String url = "jdbc:mysql://192.168.1.54:3306/quiz_web_v1";        // 사용하려는 데이터베이스명을 포함한 URL 기술

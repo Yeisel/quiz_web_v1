@@ -19,6 +19,11 @@ h1, h2, h3, h4, h5, h6 {
 		line-height: 1.5;
 		margin: 0 0 1em 0;
 }
+strong, b {
+		color: #3d4449;
+		font-weight: 600;
+		font-family: "맑은 고딕";
+}
 </style>
 </head>
 <body>
@@ -53,62 +58,7 @@ h1, h2, h3, h4, h5, h6 {
 									</span>
 								</section>
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>신규 상품</h2>
-									</header>
-									<div class="posts">
-										<article>
-											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-											<h3>상품이름</h3>
-											<p>상품 설명 ...</p>
-											<ul class="actions">
-												<li><a href="#" class="button">자세히</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-											<h3>상품이름</h3>
-											<p>상품 설명 ...</p>
-											<ul class="actions">
-												<li><a href="#" class="button">자세히</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-											<h3>상품이름</h3>
-											<p>상품 설명 ...</p>
-											<ul class="actions">
-												<li><a href="#" class="button">자세히</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3>상품이름</h3>
-											<p>상품 설명 ...</p>
-											<ul class="actions">
-												<li><a href="#" class="button">자세히</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3>상품이름</h3>
-											<p>상품 설명 ...</p>
-											<ul class="actions">
-												<li><a href="#" class="button">자세히</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<h3>상품이름</h3>
-											<p>상품 설명 ...</p>
-											<ul class="actions">
-												<li><a href="#" class="button">자세히</a></li>
-											</ul>
-										</article>
-									</div>
-								</section>
+							
 
 						</div>
 					</div>
@@ -125,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
 										
 									</form>
 									<ul class="actions">
-											<li><a href="#" class="button">로그인</a></li>
+											<li><a href="#" class="button"><strong style="font-size:15px;">로그인</strong></a></li>
 									</ul>
 								</section>
 
@@ -136,27 +86,18 @@ h1, h2, h3, h4, h5, h6 {
 									</header>
 									<ul>
 										<li>
-											<span class="opener"><strong>퀴즈</strong></span>
+											<span class="opener"><strong style="font-size:18px;">퀴즈</strong></span>
 											<ul>
-												<li><a href="#">역사</a></li>
-												<li><a href="#">스포츠</a></li>
-												<li><a href="#">넌센스</a></li>
-												<li><a href="#">상식</a></li>
-												<li><a href="#">명예의 전당</a></li>
-												<li><a href="#">문제 업로드</a></li>
+												<li><a href="#"><strong style="font-size:14px;">역사</strong></a></li>
+												<li><a href="#"><strong style="font-size:14px;">스포츠</strong></a></li>
+												<li><a href="#"><strong style="font-size:14px;">넌센스</strong></a></li>
+												<li><a href="#"><strong style="font-size:14px;">상식</strong></a></li>
+												<li><a href="#"><strong style="font-size:14px;">명예의 전당</strong></a></li>
+												<li><a href="#"><strong style="font-size:14px;">문제 업로드</strong></a></li>
 											</ul>
 										</li>
 										<li>
-											<span class="opener">포인트 몰</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li>
-											<span class="opener">커뮤니티</span>
+											<span class="opener"><strong style="font-size:18px;">포인트 몰</strong></span>
 											<ul>
 												<li><a href="#">Lorem Dolor</a></li>
 												<li><a href="#">Ipsum Adipiscing</a></li>
@@ -165,7 +106,16 @@ h1, h2, h3, h4, h5, h6 {
 											</ul>
 										</li>
 										<li>
-											<span class="opener">놀이터</span>
+											<span class="opener"><strong style="font-size:18px;">커뮤니티</strong></span>
+											<ul>
+												<li><a href="#">Lorem Dolor</a></li>
+												<li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li>
+											</ul>
+										</li>
+										<li>
+											<span class="opener"><strong style="font-size:18px;">놀이터</strong></span>
 											<ul>
 												<li><a href="#">Lorem Dolor</a></li>
 												<li><a href="#">Ipsum Adipiscing</a></li>
