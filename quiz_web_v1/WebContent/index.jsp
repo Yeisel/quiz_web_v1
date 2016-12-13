@@ -1,22 +1,19 @@
-<!DOCTYPE HTML>
-<!--
-	Editorial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<title>Editorial by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
-	<body>
-
-		<!-- Wrapper -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</head>
+<body>
+<!-- Wrapper -->
 			<div id="wrapper">
 
 				<!-- Main -->
@@ -39,14 +36,14 @@
 								<section id="banner">
 									<div class="content">
 										<header>
-											<h2>QuizBook에 오신것을 환영합니다.<br />
+											<h2>QuizBook�� ���Ű��� ȯ���մϴ�.<br />
 											by FirstClass Team</h2>
-											<!-- <p>다양한 퀴즈에 도전해보세요</p> -->
+											<!-- <p>�پ��� ��� �����غ�����</p> -->
 										</header>
 										
-										<p>다양한 퀴즈에 도전하여, <br>명예의 전당에 이름을 올려보세요</p>
+										<p>�پ��� ��� �����Ͽ�, <br>������ ���翡 �̸��� �÷�������</p>
 										<ul class="actions">
-											<li><a href="#" class="button big">퀴즈도전</a></li>
+											<li><a href="#" class="button big">�����</a></li>
 										</ul>
 									</div>
 									<span class="image object">
@@ -57,7 +54,7 @@
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>커뮤니티</h2>
+										<h2>Ŀ�´�Ƽ</h2>
 									</header>
 									<div class="features">
 										<article>
@@ -65,20 +62,20 @@
 											<div class="content">
 											
 												<!-- Table -->
-													<h3>문제 업로드</h3>
+													<h3>���� ���ε�</h3>
 													<div class="table-wrapper">
 														<table>
 															<thead>
 																<tr>
-																	<th>게시자</th>
-																	<th>게시물</th>
-																	<th>조회수</th>
+																	<th>�Խ���</th>
+																	<th>�Խù�</th>
+																	<th>��ȸ��</th>
 																</tr>
 															</thead>
 															<tbody>
 																<tr>
 																	<td>sjlee</td>
-																	<td>역사 문제 제출합니다.</td>
+																	<td>���� ���� �����մϴ�.</td>
 																	<td>3</td>
 																</tr>
 																<tr>
@@ -116,20 +113,20 @@
 											<a href="#" class="icon fa-paper-plane"></a>
 											<div class="content">
 												<!-- Table -->
-													<h3>공지 게시판</h3>
+													<h3>���� �Խ���</h3>
 													<div class="table-wrapper">
 														<table>
 															<thead>
 																<tr>
-																	<th>게시자</th>
-																	<th>게시물</th>
-																	<th>조회수</th>
+																	<th>�Խ���</th>
+																	<th>�Խù�</th>
+																	<th>��ȸ��</th>
 																</tr>
 															</thead>
 															<tbody>
 																<tr>
 																	<td>adminsjlee</td>
-																	<td>point 관련 공지사항</td>
+																	<td>point ���� ��������</td>
 																	<td>531</td>
 																</tr>
 																<tr>
@@ -167,20 +164,20 @@
 											<a href="#" class="icon fa-rocket"></a>
 											<div class="content">
 												<!-- Table -->
-													<h3>자유 게시판</h3>
+													<h3>���� �Խ���</h3>
 													<div class="table-wrapper">
 														<table>
 															<thead>
 																<tr>
-																	<th>게시자</th>
-																	<th>게시물</th>
-																	<th>조회수</th>
+																	<th>�Խ���</th>
+																	<th>�Խù�</th>
+																	<th>��ȸ��</th>
 																</tr>
 															</thead>
 															<tbody>
 																<tr>
 																	<td>sjlee</td>
-																	<td>개드립</td>
+																	<td>���帳</td>
 																	<td>20</td>
 																</tr>
 																<tr>
@@ -218,20 +215,20 @@
 											<a href="#" class="icon fa-signal"></a>
 											<div class="content">
 												<!-- Table -->
-													<h3>베스트 게시물</h3>
+													<h3>����Ʈ �Խù�</h3>
 													<div class="table-wrapper">
 														<table>
 															<thead>
 																<tr>
-																	<th>게시자</th>
-																	<th>게시물</th>
-																	<th>조회수</th>
+																	<th>�Խ���</th>
+																	<th>�Խù�</th>
+																	<th>��ȸ��</th>
 																</tr>
 															</thead>
 															<tbody>
 																<tr>
 																	<td>sjlee</td>
-																	<td>개드립</td>
+																	<td>���帳</td>
 																	<td>20</td>
 																</tr>
 																<tr>
@@ -271,55 +268,55 @@
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>신규 상품</h2>
+										<h2>�ű� ��ǰ</h2>
 									</header>
 									<div class="posts">
 										<article>
 											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-											<h3>상품이름</h3>
-											<p>상품 설명 ...</p>
+											<h3>��ǰ�̸�</h3>
+											<p>��ǰ ���� ...</p>
 											<ul class="actions">
-												<li><a href="#" class="button">자세히</a></li>
+												<li><a href="#" class="button">�ڼ���</a></li>
 											</ul>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-											<h3>상품이름</h3>
-											<p>상품 설명 ...</p>
+											<h3>��ǰ�̸�</h3>
+											<p>��ǰ ���� ...</p>
 											<ul class="actions">
-												<li><a href="#" class="button">자세히</a></li>
+												<li><a href="#" class="button">�ڼ���</a></li>
 											</ul>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-											<h3>상품이름</h3>
-											<p>상품 설명 ...</p>
+											<h3>��ǰ�̸�</h3>
+											<p>��ǰ ���� ...</p>
 											<ul class="actions">
-												<li><a href="#" class="button">자세히</a></li>
+												<li><a href="#" class="button">�ڼ���</a></li>
 											</ul>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3>상품이름</h3>
-											<p>상품 설명 ...</p>
+											<h3>��ǰ�̸�</h3>
+											<p>��ǰ ���� ...</p>
 											<ul class="actions">
-												<li><a href="#" class="button">자세히</a></li>
+												<li><a href="#" class="button">�ڼ���</a></li>
 											</ul>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3>상품이름</h3>
-											<p>상품 설명 ...</p>
+											<h3>��ǰ�̸�</h3>
+											<p>��ǰ ���� ...</p>
 											<ul class="actions">
-												<li><a href="#" class="button">자세히</a></li>
+												<li><a href="#" class="button">�ڼ���</a></li>
 											</ul>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<h3>상품이름</h3>
-											<p>상품 설명 ...</p>
+											<h3>��ǰ�̸�</h3>
+											<p>��ǰ ���� ...</p>
 											<ul class="actions">
-												<li><a href="#" class="button">자세히</a></li>
+												<li><a href="#" class="button">�ڼ���</a></li>
 											</ul>
 										</article>
 									</div>
@@ -345,7 +342,7 @@
 										
 									</form>
 									<ul class="actions">
-											<li><a href="#" class="button">로그인</a></li>
+											<li><a href="#" class="button">�α���</a></li>
 									</ul>
 								</section>
 
@@ -431,13 +428,5 @@
 					</div>
 
 			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!—[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]—>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>

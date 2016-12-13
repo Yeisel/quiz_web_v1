@@ -7,10 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class JDBCmysql {
-	public static void main(String[] args) {
-		Connection conn = null;                                        // null로 초기화 한다.
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+	
+	Connection conn = null;                                        // null로 초기화 한다.
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	
+	public Connection JDBCmysql(){
 		
 		try{
 			String url = "jdbc:mysql://192.168.1.54:3306/quiz_web_v1";        // 사용하려는 데이터베이스명을 포함한 URL 기술
@@ -47,6 +49,7 @@ public class JDBCmysql {
 			if(pstmt != null) try{pstmt.close();}catch(SQLException sqle){}   // PreparedStatement 객체 해제
 			if(conn != null) try{conn.close();}catch(SQLException sqle){}   // Connection 해제
 		}
-
+		
+		return conn;
 	}
 }
