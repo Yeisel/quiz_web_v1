@@ -1,3 +1,6 @@
+<%@ page import="myboard.bean.BoardDto" %>
+<%@ page import="java.util.List" %>
+<%@ page contentType="text/html;charset=utf-8" %>
 <!DOCTYPE HTML>
 <!--
 	Editorial by HTML5 UP
@@ -20,6 +23,15 @@
 	}
 	
 	
+	h1, h2, h3, h4, h5, h6 {
+		color: #3d4449;
+		font-family: "Open Sans", sans-serif;
+		font-weight: 800;
+		line-height: 1.5;
+		margin: 0 0 1em 0;
+	}
+	
+	
 	
 	</style>
 	
@@ -34,7 +46,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="index.html" class="logo"><a1><strong>Quiz Book</strong></a1>&nbsp;&nbsp;&nbsp; by firstclass</a>
+									<a href="#" class="logo"><a1><strong>Quiz Book</strong></a1>&nbsp;&nbsp;&nbsp; by firstclass</a>
 									
 								</header>
 
@@ -42,35 +54,35 @@
 								<section>
 								<!-- 
 									<header class="main">
-										<h1>자유 게시판</h1>
+										<h1>ìì  ê²ìí</h1>
 									</header>
 								 -->
 									<!-- Content -->
-										<h2 id="content">자유게시판</h2>
-										<p>유저들과 자유로운 커뮤니케이션 공간</p>
+										<h2 id="content">COMMUNITY</h2>
+										<p>ì ì ë¤ê³¼ ìì ë¡ì´ ì»¤ë®¤ëì¼ì´ì ê³µê°</p>
 										
 									
 									<hr class="major" />
 									
 									<!-- Table -->
-													<h3>자유 게시판</h3>
+													<h3>ìì  ê²ìí</h3>
 													<div class="table-wrapper">
 														<table>
 															<thead>
 																<tr>
-																	<th style="text-align:left" width="10%">번호</th>
-																	<th style="text-align:left" width="50%">게시물 제목</th>
-																	<th style="text-align:left" width="10%">게시자</th>
-																	<th style="text-align:left" width="10%">조회수</th>
-																	<th style="text-align:left" width="10%">게시일</th>
-																	<th style="text-align:left" width="10%">추천수</th>
+																	<th style="text-align:left" width="10%">ë²í¸</th>
+																	<th style="text-align:left" width="50%">ê²ìë¬¼ ì ëª©</th>
+																	<th style="text-align:left" width="10%">ê²ìì</th>
+																	<th style="text-align:left" width="10%">ì¡°íì</th>
+																	<th style="text-align:left" width="10%">ê²ìì¼</th>
+																	<th style="text-align:left" width="10%">ì¶ì²ì</th>
 																	
 																</tr>
 															</thead>
 															<tbody>
 																<tr>
 																	<td>1</td>
-																	<td>하이하이하이 내가 일빠</td>
+																	<td>íì´íì´íì´ ë´ê° ì¼ë¹ </td>
 																	<td>sjlee</td>
 																	<td>5,000,000</td>
 																	<td>2016-12-13</td>
