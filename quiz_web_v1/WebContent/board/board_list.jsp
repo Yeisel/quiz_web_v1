@@ -87,10 +87,8 @@
                               <h2 id="content">COMMUNITY</h2>
                               <p>유저들과 자유로운 소통공간</p>
                               
-                            <div class="6u$ 12u$(small)">
-								<input type="checkbox" id="demo-human" name="demo-human" checked>
-								<label for="demo-human"></label>
-							</div>
+                            
+                              
                            
                            <hr class="major" />
                            
@@ -100,8 +98,10 @@
                                    <table>
                                       <thead>
                                          <tr>
+                                         	
+                                            <th style="text-align:left" width="5%"><a2>선택</a2></th>
                                             <th style="text-align:left" width="10%"><a2>번호</a2></th>
-                                            <th style="text-align:left" width="40%"><a2>게시물 제목</a2></th>
+                                            <th style="text-align:left" width="35%"><a2>게시물 제목</a2></th>
                                             <th style="text-align:left" width="15%"><a2>게시자</a2></th>
                                             <th style="text-align:left" width="10%"><a2>조회수</a2></th>
                                             <th style="text-align:left" width="15%"><a2>게시일</a2></th>
@@ -132,6 +132,14 @@
 %>
 
 						<tr height="25" align="center">
+						   <td style="text-align:left">
+						   
+						   <div class="6u$ 12u$(small)">
+								<input type="checkbox" id="demo-human<%=num%>" name="demo-human" >
+								<label for="demo-human<%=num%>"></label>
+							</div>
+						   
+						   </td>
 						   <td style="text-align:left"><%=num %></td>
 						   <td style="text-align:left"><%=subject %></td>
 						   <td style="text-align:left"><%=userid %></td>
@@ -166,14 +174,14 @@
                            
 
                                        <ul class="pagination" align="center">
-                                          <li><span class="button disabled">Prev</span></li>
+                                          <li><span class="button disabled">이전</span></li>
                                           <li><a href="#" class="page active">1</a></li>
                                           <li><a href="#" class="page">2</a></li>
                                           <!-- <li><span>&hellip;</span></li> -->
                                           <li><a href="#" class="page">3</a></li>
                                           <li><a href="#" class="page">4</a></li>
                                           <li><a href="#" class="page">5</a></li>
-                                          <li><a href="#" class="button">Next</a></li>
+                                          <li><a href="#" class="button">다음</a></li>
                                        </ul>
 
 
