@@ -3,8 +3,14 @@
 <%@ page import="java.sql.*"%>  
 
 <jsp:useBean id="dto" class="prjdata.QuizF_boardDTO"></jsp:useBean>
+<jsp:useBean id="dao" class="prjbean.MainProc"></jsp:useBean>
+ 
+<%
+//	MainProc mc = new MainProc();
+%>
 
-<<jsp:setProperty property="*" name="dto"/>
+
+<jsp:setProperty property="*" name="dto"/>
 
 
 <%

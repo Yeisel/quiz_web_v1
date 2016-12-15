@@ -1,3 +1,4 @@
+<%@page import="prjbean.MainProc"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
     <%@ page import="java.sql.*" %>
@@ -29,6 +30,10 @@
 
 <body>
 <%
+MainProc mc = new MainProc();
+mc.selectUser("sjlee");
+
+
    Class.forName("com.mysql.jdbc.Driver");
    String url = "jdbc:mysql://192.168.1.54:3306/quiz_web_v1";
    String id = "firstclass";
@@ -49,7 +54,8 @@
       rs.close();
       
       String sqlList = "SELECT * from f_board order by f_board_number ASC";
-      rs = stmt.executeQuery(sqlList);      
+      rs = stmt.executeQuery(sqlList);
+    
 %>
 
 <!-- Wrapper -->

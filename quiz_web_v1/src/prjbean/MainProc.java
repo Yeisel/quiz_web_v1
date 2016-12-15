@@ -32,9 +32,9 @@ public class MainProc {
 		try {
 			con = ds.getConnection();
 			
-			String sql = "select * from user where user_id like ? order by desc"; 
+			String sql = "select * from user where user_id = ?";
 			pstmt = con.prepareStatement(sql);  
-			pstmt.setString(1, "'%" + user_Name + "%'");
+			pstmt.setString(1, user_Name);
 			
 			rs = pstmt.executeQuery();
 			
