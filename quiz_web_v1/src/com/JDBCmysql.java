@@ -20,22 +20,23 @@ public class JDBCmysql {
 			Class.forName("com.mysql.jdbc.Driver");                       // 데이터베이스와 연동하기 위해 DriverManager에 등록한다.
 			conn=DriverManager.getConnection(url,id,pw);              // DriverManager 객체로부터 Connection 객체를 얻어온다.
 
-			String sql = "select * from user where user_id = ?";                        // sql 쿼리
+			String sql = "select * from user";                        // sql 쿼리		// where user_id = ?
 			pstmt = conn.prepareStatement(sql);                          // prepareStatement에서 해당 sql을 미리 컴파일한다.
-			pstmt.setString(1,"sjlee");
+			//pstmt.setString(1,"sslee");
 
 			rs = pstmt.executeQuery();                                        // 쿼리를 실행하고 결과를 ResultSet 객체에 담는다.
 
 			while(rs.next()){                                                        // 결과를 한 행씩 돌아가면서 가져온다.
-				System.out.println(rs.getString("user_id"));
-				System.out.println(rs.getString("user_email"));
-				System.out.println(rs.getString("user_password"));
-				System.out.println(rs.getString("user_name"));
-				System.out.println(rs.getString("user_address"));
-				System.out.println(rs.getString("user_phone_number"));
-				System.out.println(rs.getString("user_total_point"));
-				System.out.println(rs.getString("user_current_point"));
-				System.out.println(rs.getString("user_month_point"));
+				System.out.print(rs.getString("user_id")+"\t");
+				System.out.print(rs.getString("user_email")+"\t");
+				System.out.print(rs.getString("user_password")+"\t");
+				System.out.print(rs.getString("user_name")+"\t");
+				System.out.print(rs.getString("user_address")+"\t");
+				System.out.print(rs.getString("user_phone_number")+"\t");
+				System.out.print(rs.getString("user_total_point")+"\t");
+				System.out.print(rs.getString("user_current_point")+"\t");
+				System.out.print(rs.getString("user_month_point")+"\t");
+				System.out.println("");
 		}
 
 		}catch(Exception e){                                                    // 예외가 발생하면 예외 상황을 처리한다.
