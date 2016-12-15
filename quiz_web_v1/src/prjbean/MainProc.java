@@ -28,13 +28,13 @@ public class MainProc {
 		}
 	}
 	
-	public void testDB(){
+	public void selectUser(String user_Name){
 		try {
 			con = ds.getConnection();
 			
-			String sql = "select * from user where user_id = ?"; 
+			String sql = "select * from user where user_id like ? order by desc"; 
 			pstmt = con.prepareStatement(sql);  
-			pstmt.setString(1,"sjlee");
+			pstmt.setString(1, "'%" + user_Name + "%'");
 			
 			rs = pstmt.executeQuery();
 			
@@ -48,6 +48,31 @@ public class MainProc {
 				System.out.println(rs.getString("user_total_point"));
 				System.out.println(rs.getString("user_current_point"));
 				System.out.println(rs.getString("user_month_point"));
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void selectProduct(String product_Name){
+		try {
+			con = ds.getConnection();
+			
+			String sql = "select * from user where user_id like ? order by desc"; 
+			pstmt = con.prepareStatement(sql);  
+			pstmt.setString(1, "'%" + product_Name + "%'");
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				System.out.println(rs.getString("product_number"));
+				System.out.println(rs.getString("product_name"));
+				System.out.println(rs.getString("product_price"));
+				System.out.println(rs.getString("product_image"));
+				System.out.println(rs.getString("product_stock"));
+				System.out.println(rs.getString("product_company"));
+				System.out.println(rs.getString("product_contents"));
 			}
 		}
 		catch (SQLException e) {
