@@ -5,11 +5,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 <script src="js/jquery-3.1.1.min.js"></script>
+
+<%
+	String param = request.getParameter("page");
+		System.out.println("페이지 : " + param);
+	if(param!=null){
+		fnPageMove(param);
+	}
+		
+%>
 <script>
 	function fnPageMove(page){
 		$("#here").load(page);
 	}
 </script>
+
 <link rel="stylesheet" href="assets/css/main.css" />
 <style>
 h1, h2, h3, h4, h5, h6{
@@ -28,6 +38,7 @@ strong, b{
 </style>
 </head>
 	<body>
+
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -157,13 +168,13 @@ strong, b{
 					</div>
 
 			</div>
-
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/ie/respond.min.js"></script>
 			<script src="assets/js/main.js"></script>
+
 
 	</body>
 </html>

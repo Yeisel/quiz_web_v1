@@ -7,5 +7,8 @@
 </head>
 	<body>
 		<h1>상식 퀴즈</h1>
+		<a href="#">퀴즈풀래요</a>
+		<a href="index.jsp">메인좌로</a>
+		
 	</body>
 </html>
