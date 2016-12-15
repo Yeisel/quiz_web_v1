@@ -68,7 +68,7 @@
                                        <form method="post" action="board_insert_proc.jsp">
                                           <div class="row uniform">
                                              <div class="6u 12u$(xsmall)">
-                                                <input type="text" name="userid" placeholder="ID" />
+                                                <input type="text" name="f_board_id" placeholder="ID" />
                                              </div>
                                              <!-- <div class="6u$ 12u$(xsmall)">
                                                  <input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" /> 

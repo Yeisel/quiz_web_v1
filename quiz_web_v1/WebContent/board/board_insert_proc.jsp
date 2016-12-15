@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ page import="java.sql.*"%>  
+
+<jsp:useBean id="dto" class="prjdata.QuizF_boardDTO"></jsp:useBean>
+
+<<jsp:setProperty property="*" name="dto"/>
+
+
 <%
    request.setCharacterEncoding("utf-8");
 
