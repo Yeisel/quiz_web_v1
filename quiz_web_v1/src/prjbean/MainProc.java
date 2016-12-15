@@ -38,7 +38,7 @@ public class MainProc {
 			
 			rs = pstmt.executeQuery();
 			
-			while(rs.next()){ 
+			while(rs.next()){
 				System.out.println(rs.getString("user_id"));
 				System.out.println(rs.getString("user_email"));
 				System.out.println(rs.getString("user_password"));
@@ -49,7 +49,7 @@ public class MainProc {
 				System.out.println(rs.getString("user_current_point"));
 				System.out.println(rs.getString("user_month_point"));
 			}
-		} 
+		}
 		catch (SQLException e) {
 			e.printStackTrace();
 		}
