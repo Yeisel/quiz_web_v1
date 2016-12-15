@@ -16,6 +16,11 @@
    <style>
    a1 {
       font-size: 80px;
+      
+   }
+   
+   a2 {
+      font-size: 15px;
    }
    
    
@@ -82,6 +87,10 @@
                               <h2 id="content">COMMUNITY</h2>
                               <p>유저들과 자유로운 소통공간</p>
                               
+                            <div class="6u$ 12u$(small)">
+								<input type="checkbox" id="demo-human" name="demo-human" checked>
+								<label for="demo-human"></label>
+							</div>
                            
                            <hr class="major" />
                            
@@ -91,17 +100,17 @@
                                    <table>
                                       <thead>
                                          <tr>
-                                            <th style="text-align:left" width="10%">번호</th>
-                                            <th style="text-align:left" width="40%">게시물 제목</th>
-                                            <th style="text-align:left" width="15%">게시자</th>
-                                            <th style="text-align:left" width="10%">조횟수</th>
-                                            <th style="text-align:left" width="15%">게시일</th>
-                                            <th style="text-align:left" width="10%">좋아요</th>
+                                            <th style="text-align:left" width="10%"><a2>번호</a2></th>
+                                            <th style="text-align:left" width="40%"><a2>게시물 제목</a2></th>
+                                            <th style="text-align:left" width="15%"><a2>게시자</a2></th>
+                                            <th style="text-align:left" width="10%"><a2>조회수</a2></th>
+                                            <th style="text-align:left" width="15%"><a2>게시일</a2></th>
+                                            <th style="text-align:left" width="10%"><a2>좋아요</a2></th>
                                             
                                          </tr>
                                        </thead>
 <%
-   if(total==0) {
+		if(total==0) {
 %>
          <tr>
           <td colspan="6">등록된 글이 없습니다.</td>
@@ -160,11 +169,10 @@
                                           <li><span class="button disabled">Prev</span></li>
                                           <li><a href="#" class="page active">1</a></li>
                                           <li><a href="#" class="page">2</a></li>
+                                          <!-- <li><span>&hellip;</span></li> -->
                                           <li><a href="#" class="page">3</a></li>
-                                          <li><span>&hellip;</span></li>
-                                          <li><a href="#" class="page">8</a></li>
-                                          <li><a href="#" class="page">9</a></li>
-                                          <li><a href="#" class="page">10</a></li>
+                                          <li><a href="#" class="page">4</a></li>
+                                          <li><a href="#" class="page">5</a></li>
                                           <li><a href="#" class="button">Next</a></li>
                                        </ul>
 
