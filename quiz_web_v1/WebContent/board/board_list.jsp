@@ -14,7 +14,6 @@
       <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 </head>
 <style>
-   
    a1 {font-size: 80px;}
    a2 {font-size: 15px;}
    
@@ -129,7 +128,7 @@ mc.selectUser("sjlee");
                         </div>
                      </td>
                      <td style="text-align:left"><%=num %></td>
-                     <td style="text-align:left"><%=subject %></td>
+                     <td style="text-align:left"><a href="board_read.jsp?idx=<%=num%>"><%=subject %></a></td>
                      <td style="text-align:left"><%=userid %></td>
                      <td style="text-align:left"><%=count %></td>
                      <td style="text-align:left"><%=date %></td>
