@@ -1,11 +1,14 @@
+<%@page import="java.util.List"%>
 <%@page import="prjbean.MainProc"%>
+<%@page import="myboard.bean.BoardDto"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-    <%@ page import="java.sql.*" %>
+<%@ page import="java.sql.*" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Elements - Editorial by HTML5 UP</title>
+<title>QuizBook FreeBoard</title>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
       <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -25,36 +28,19 @@
       margin: 0 0 1em 0;
    }
    
+   td {
+		text-align:left;
+   }
 </style>
 
 <body>
+<jsp:useBean id="dao" class="myboard.bean.BoardDao" />
 <%
-MainProc mc = new MainProc();
-mc.selectUser("sjlee");
-
-
-   Class.forName("com.mysql.jdbc.Driver");
-   String url = "jdbc:mysql://192.168.1.54:3306/quiz_web_v1";
-   String id = "firstclass";
-   String pass = "1111";
-   int total = 0;
-   
-   try {
-      Connection conn = DriverManager.getConnection(url,id,pass);
-      Statement stmt = conn.createStatement();
-      
-      String sqlCount = "SELECT count(*) FROM f_board";
-      ResultSet rs = stmt.executeQuery(sqlCount);
-      
-      if(rs.next()){
-         total = rs.getInt(1);
-      }
-      
-      rs.close();
-      
-      String sqlList = "SELECT * from f_board order by f_board_number ASC";
-      rs = stmt.executeQuery(sqlList);
-    
+		String keyField = request.getParameter("keyField");
+		String keyWord = request.getParameter("keyWord");
+		List list = dao.getBoardList(keyField, keyWord);
+		
+		    
 %>
 
 <!-- Wrapper -->
@@ -99,53 +85,42 @@ mc.selectUser("sjlee");
                   </tr>
                </thead>
 <%
-   if(total==0) {
+	if(list.size() == 0){
 %>
 
                   <tr>
-                     <td colspan="6">등록된 글이 없습니다.</td>
+                     <td colspan="7">등록된 글이 없습니다.</td>
                   </tr>
 <%
-   } else {
-      while(rs.next()) {
-         int num = rs.getInt(1);
-         String subject = rs.getString(2);
-         String contents = rs.getString(3);
-         String userid = rs.getString(4);
-         int count = rs.getInt(5);
-         String date = rs.getString(6);
-         String good = rs.getString(7);
-         String bad = rs.getString(8);
-         int pos = rs.getInt(9);
-         int depth = rs.getInt(10);   
+	}
+	else{
+		for(int i=0; i<list.size(); i++){
+			BoardDto dto = (BoardDto)list.get(i);
 %>
 
                   <tr height="25" align="center">
                      <td style="text-align:left">
                         <div class="6u$ 12u$(small)">
-                           <input type="checkbox" id="demo-human<%=num%>" name="demo-human" >
-                           <label for="demo-human<%=num%>"></label>
+                           <input type="checkbox" id="demo-human<%=dto.getF_board_number()%>" name="demo-human" >
+                           <label for="demo-human<%=dto.getF_board_number()%>"></label>
                         </div>
                      </td>
-                     <td style="text-align:left"><%=num %></td>
-                     <td style="text-align:left"><a href="board_read.jsp?idx=<%=num%>"><%=subject %></a></td>
-                     <td style="text-align:left"><%=userid %></td>
-                     <td style="text-align:left"><%=count %></td>
-                     <td style="text-align:left"><%=date %></td>
-                     <td style="text-align:left"><%=good %></td>
+                     <td style="text-align:left"><%=dto.getF_board_number() %></td>
+                     <td style="text-align:left"><a href="board_read.jsp?idx=<%=dto.getF_board_number()%>"><%=dto.getF_board_subject()%></a></td>
+                     <td style="text-align:left"><%=dto.getF_board_id()%></td>
+                     <td style="text-align:left"><%=dto.getF_board_count() %></td>
+                     <td style="text-align:left"><%=dto.getF_board_date() %></td>
+                     <td style="text-align:left"><%=dto.getF_board_good() %></td>
                   </tr>
-                  
-<% 
-      }
-   }
-   rs.close();
-   stmt.close();
-   conn.close();
-   
-   } catch(SQLException e) {
-      out.println( e.toString() );
-   }
+<%
+		}
+	}
+
+
 %>
+                  
+                  
+
 
             </table>
          </div>

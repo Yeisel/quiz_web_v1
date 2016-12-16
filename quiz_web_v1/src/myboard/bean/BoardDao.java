@@ -18,7 +18,7 @@ public class BoardDao {
 	public BoardDao(){
 		try{
 			Context ctx = new InitialContext();
-			ds = (DataSource)ctx.lookup("java:comp/env/jdbc/oracleDB");
+			ds = (DataSource)ctx.lookup("java:comp/env/jdbc/mysql");
 		}
 		catch(Exception err){
 			System.out.println("DB연결 실패 : " + err);
@@ -78,7 +78,7 @@ public class BoardDao {
 	
 	private void updatePos(Connection con){
 		try{
-			String sql = "update tblBoard set f_board_pos=f_board_pos+1";
+			String sql = "update f_board set f_board_pos=f_board_pos+1";
 			pstmt = con.prepareStatement(sql);
 			pstmt.executeUpdate();
 		}
