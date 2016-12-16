@@ -114,8 +114,13 @@ strong, b{
 									<header class="major">
 										<h2>Menu</h2>
 									</header>
+									
+									<form method="post" action="login.do">
+										<input type="hidden" name="home" value="<%=session.getAttribute("logged")%>"/>
+										<button type="submit"><strong style="font-size:18px; color:red;">집에가기</strong></button>
+									</form>
+									
 									<ul>
-										<li><a href="index.jsp"><strong style="font-size:18px;">집에가기</strong></a></li>
 										<li>
 											<span class="opener"><a href="javascript:fnPageMove('quiz/quiz_main.jsp')"><strong style="font-size:18px;">퀴즈</strong></a></span>
 											<ul>
