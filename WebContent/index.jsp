@@ -4,16 +4,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
-<script src="js/jquery-3.1.1.min.js"></script>
-
-<%
-	String param = request.getParameter("page");
-		System.out.println("페이지 : " + param);
-	if(param!=null){
-		fnPageMove(param);
-	}
-		
-%>
 <script>
 	function fnPageMove(page){
 		$("#here").load(page);
@@ -53,7 +43,7 @@ strong, b{
 								</header>
 
 							<!-- Banner -->
-								<section id="banner">
+								<section >
 									<div class="here" id="here">
 									<header>
 										<span class="image object" style="float:right;">

@@ -7,5 +7,7 @@
 </head>
 	<body>
 		<h1>넌센스 퀴즈</h1>
+		<a href="#">퀴즈풀기</a>
+		<a href="index.jsp">메인으로</a>
 	</body>
 </html>
