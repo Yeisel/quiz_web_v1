@@ -14,44 +14,45 @@ public class BoardDao {
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 	private DataSource ds;
-	
+
 	public BoardDao(){
 		try{
 			Context ctx = new InitialContext();
 			ds = (DataSource)ctx.lookup("java:comp/env/jdbc/mysql");
+			System.out.println("DBÏó∞Í≤∞ ÏÑ±Í≥µ...");
 		}
 		catch(Exception err){
-			System.out.println("DBø¨∞· Ω«∆– : " + err);
+			System.out.println("DBÏó∞Í≤∞ Ïã§Ìå® : " + err);
 		}
 	}
-	
+
 	public void freeConnection(){
 		if(rs != null){try{rs.close();}catch(Exception err){}}
 		if(pstmt != null){try{pstmt.close();}catch(Exception err){}}
 		if(con != null){try{con.close();}catch(Exception err){}}
 	}
-	
-	// ¿¸√º±€ ¡∂»∏(List.jsp)
+
+	// ÌéòÏù¥Ïßï (List.jsp)
 	public ArrayList getBoardList(String keyField, String keyWord){
-		ArrayList list = new ArrayList();
+		ArrayList<BoardDto> list = new ArrayList<BoardDto>();
 		String sql = null;
-		
+
 		if(keyWord == null || keyWord.isEmpty()){
 			sql = "select * from f_board order by f_board_number";
 		}
 		else{
 			sql = "select * from tblBoard where " + keyField
-				+ " like '%" + keyWord + "%' order by f_board_pos";
+					+ " like '%" + keyWord + "%' order by f_board_pos";
 		}
-		
+
 		try{
 			con = ds.getConnection();
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			
+
 			while(rs.next()){
 				BoardDto dto = new BoardDto();
-				
+
 				dto.setF_board_number(rs.getInt("f_board_number"));
 				dto.setF_board_subject(rs.getString("f_board_subject"));
 				dto.setF_board_contents(rs.getString("f_board_contents"));
@@ -62,9 +63,10 @@ public class BoardDao {
 				dto.setF_board_bad(rs.getString("f_board_bad"));
 				dto.setF_board_pos(rs.getInt("f_board_pos"));
 				dto.setF_board_depth(rs.getInt("f_board_depth"));
-				
+
 				list.add(dto);
 			}
+			
 		}
 		catch(Exception err){
 			System.out.println("getBoardList() : " + err);
@@ -72,10 +74,10 @@ public class BoardDao {
 		finally{
 			freeConnection();
 		}
-		
+
 		return list;
 	}
-	
+
 	private void updatePos(Connection con){
 		try{
 			String sql = "update f_board set f_board_pos=f_board_pos+1";
@@ -86,5 +88,9 @@ public class BoardDao {
 			System.out.println("updatePos : " + err);
 		}
 	}
+
+	// Í≤ÄÏÉâÍ∏∞Îä•
+
+	//Í≤åÏãúÍ∏Ä Ïò¨Î¶¨Í∏∞Í∏∞
 
 }

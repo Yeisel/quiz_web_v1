@@ -1,3 +1,5 @@
+/*
+
 package prjbean;
 
 import java.io.IOException;
@@ -43,7 +45,7 @@ public class MainProc extends HttpServlet {
 			con = ds.getConnection();
 		}
 		catch(Exception err){
-			System.out.println("DB ¿¬°á ½ÇÆÐ" + err);
+			System.out.println("DB ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½" + err);
 		}
 		finally{
 			
@@ -64,17 +66,17 @@ public class MainProc extends HttpServlet {
 			rs = pstmt.executeQuery();
 						
 			if(user_Name.equals(request.getParameter("user_Id")) && user_Password.equals(request.getParameter("user_Pw"))){
-				System.out.println("Ã¹¹øÂ° if¹® ÁøÀÔ");
+				System.out.println("Ã¹ï¿½ï¿½Â° ifï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 				session.setAttribute("logged", id);
 				response.sendRedirect("index.jsp");
 			}
 			else if(guest.equals(request.getParameter("logout"))){
-				System.out.println("2¹øÂ° if¹® ÁøÀÔ");
+				System.out.println("2ï¿½ï¿½Â° ifï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 				session.invalidate();
 				response.sendRedirect("index.jsp");
 			}
 			else{
-				System.out.println("3¹øÂ° if¹® ÁøÀÔ");
+				System.out.println("3ï¿½ï¿½Â° ifï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 				session.invalidate();
 				response.sendRedirect("index.jsp");
 			}
@@ -149,3 +151,4 @@ public class MainProc extends HttpServlet {
 		if(con != null){try{con.close();}catch(Exception err){}}
 	}
 }
+*/
