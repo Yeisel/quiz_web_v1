@@ -57,7 +57,7 @@ public class MainProc extends HttpServlet {
 				req.setAttribute("dto", dto);
 			}
 		
-		dispatcher = req.getRequestDispatcher("login.jsp");
+		dispatcher = req.getRequestDispatcher("index.jsp");
 		
 		if(session.getAttribute("logged") == null){			
 			System.out.println("여기는 세션 널 : " + session.getAttribute("logged"));
