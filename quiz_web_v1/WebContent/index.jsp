@@ -86,9 +86,10 @@ strong, b{
 %>	
 									<form method="post" action="login.do">
 										<input type="text" name="user_Id" id="user_Id" placeholder="Id" />
-										<input type="text" name="user_Pw" id="user_Pw" placeholder="Password" />
-										<input type="submit" value="로그인" />	
+										<input type="text" name="user_Pw" id="user_Pw" placeholder="Password" /><br/>
+										<button type="submit"><strong style="font-size:13px; color:red;">로그인</strong></button>
 									</form>
+									<a href="javascript:fnPageMove('mypage/join_new.jsp')" class="button"><strong style="font-size:13px; color:gray;">회원가입</strong></a>
 <%			
 			}
 			else{

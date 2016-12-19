@@ -106,7 +106,7 @@ public class MainProc extends HttpServlet {
 				dispatcher.forward(req, resp);
 			}
 			else{
-				System.out.println("여기는 세션 낫널 = " + session.getAttribute("logged") + ", " + req.getParameter("home"));
+				System.out.println("여기는 guest.equals의 else = " + req.getParameter("logout"));
 				dispatcher.forward(req, resp);
 			}
 		}
