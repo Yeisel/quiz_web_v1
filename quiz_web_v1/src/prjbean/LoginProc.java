@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -49,98 +50,97 @@ public class LoginProc extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		QuizUserDTO dto = new QuizUserDTO();
+		String userId = (String)req.getParameter("user_Id");
+		String userPw = (String)req.getParameter("user_Pw");
+		String guest = "guest";
 		
 		session = req.getSession();
 		
-		String userId = null;
-		String userPw = null;
-		String guest = "guest";
+		QuizUserDTO dto = new QuizUserDTO();
 		
-		if(session.getAttribute("logged") == null){
+		String sql = "select * from user where user_Id='" + userId + "'";
+		
+		try{
+			con = ds.getConnection();
+		
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()){
+				System.out.println("여기는 rs 넥스트");
+				
+				dto.setUser_Id(rs.getString("user_Id"));
+				dto.setUser_Password(rs.getString("user_Password"));
+				dto.setUser_Current_Point(rs.getInt("user_Current_Point"));
+		
+				req.setAttribute("dto", dto);
+			}
+		
+		dispatcher = req.getRequestDispatcher("login.jsp");
+		
+		if(session.getAttribute("logged") == null){			
 			System.out.println("여기는 세션 널 : " + session.getAttribute("logged"));
 			
-			if(req.getParameter("user_Id") == "" && req.getParameter("user_Pw") == ""){
+			if(req.getParameter("user_Id") == "" && req.getParameter("user_Pw") == ""){				
 				System.out.println("여기는 id pw 공백 : " + req.getParameter("user_Id") + ", " + req.getParameter("user_Pw"));
-				dispatcher = req.getRequestDispatcher("login.jsp");
 				dispatcher.forward(req, resp);
 			}
-			else if(req.getParameter("user_Id") != null && req.getParameter("user_Pw") != null){
-				System.out.println("여기는 id pw 낫널 : " + req.getParameter("user_Id") + ", " + req.getParameter("user_Pw"));
+			else if(req.getParameter("user_Id") != null && req.getParameter("user_Pw") != null){				
+				System.out.println("여기는 id pw 낫널 : " + req.getParameter("user_Id") + ", " + req.getParameter("user_Pw"));				
+				System.out.println("userId , userPw : " + userId + ", " + userPw);				
 				
-				userId = (String)req.getParameter("user_Id");
-				userPw = (String)req.getParameter("user_Pw");
-				
-				System.out.println("userId , userPw : " + userId + ", " + userPw);
-				
-				String sql = "select * from user where user_Id='" + userId + "'";
-				
-				try{
-					con = ds.getConnection();
-				
-					pstmt = con.prepareStatement(sql);
-					rs = pstmt.executeQuery();
-					
-					if(rs.next()){
-						System.out.println("여기는 rs 넥스트");
-						
-						dto.setUser_Id(rs.getString("user_Id"));
-						dto.setUser_Password(rs.getString("user_Password"));
-						dto.setUser_Current_Point(rs.getInt("user_Current_Point"));
-				
-						req.setAttribute("dto", dto);
-						
-						dispatcher = req.getRequestDispatcher("login.jsp");
-						
-						if(rs.getString("user_Id").equals(userId) && rs.getString("user_Password").equals(userPw)){
-							System.out.println("여기는 로긴 성공");
-							session.setAttribute("logged", userId);
-							dispatcher.forward(req, resp);
-						}
-						else if(guest.equals(req.getParameter("logout"))){
-							System.out.println("여기는 로그아웃");
-							session.invalidate();
-							dispatcher.forward(req, resp);
-						}
-						else{
-							System.out.println("여기는 비회원");
-							session.invalidate();
-							dispatcher.forward(req, resp);
-						}
-					}
-					else{
-						System.out.println("여기는 오타");
-						session.invalidate();
-						dispatcher.forward(req, resp);
-					}
+				if(rs.getString("user_Id").equals(userId) && rs.getString("user_Password").equals(userPw)){
+					System.out.println("여기는 로긴 성공");
+					session.setAttribute("logged", userId);
+					dispatcher.forward(req, resp);
 				}
-				catch(Exception err){
-					err.printStackTrace();
+				
+				else if(guest.equals(req.getParameter("logout"))){
+					System.out.println("여기는 로그아웃");
+					session.invalidate();
+					dispatcher.forward(req, resp);
 				}
-				finally{
-					if(rs != null){try{rs.close();}catch(Exception err){}}
-					if(pstmt != null){try{pstmt.close();}catch(Exception err){}}
-					if(con != null){try{con.close();}catch(Exception err){}}
+				else{
+					System.out.println("여기는 비회원");
+					session.invalidate();
+					dispatcher.forward(req, resp);
 				}
 			}
 			else{
 				System.out.println("여기는 id pw 공백의 else");
-				dispatcher = req.getRequestDispatcher("login.jsp");
-				dispatcher.forward(req, resp);
+				
+				dispatcher.forward(req, resp);		
 			}
 		}
 		else if(session.getAttribute("logged") != null){
+			System.out.println(userId + ", " + session.getAttribute("logged"));
+			
 			if(guest.equals(req.getParameter("logout"))){
 				System.out.println("여기는 세션 낫널의 guest.equals = " + req.getParameter("logout"));
-				dispatcher = req.getRequestDispatcher("login.jsp");
 				session.invalidate();
 				dispatcher.forward(req, resp);
 			}
+			else if(userId.equals(session.getAttribute("logged"))){
+				System.out.println("여기는 userId.equals(logged) = " + session.getAttribute("logged"));
+				dispatcher.forward(req, resp);
+			}
 			else{
-				System.out.println("여기는 세션 낫널 = " + session.getAttribute("logged"));
-				dispatcher = req.getRequestDispatcher("login.jsp");
+				System.out.println("여기는 세션 낫널 = " + session.getAttribute("logged") + ", " + req.getParameter("home"));
 				dispatcher.forward(req, resp);
 			}
 		}
-	}	
+		else{
+			
+		}
+		
+		} // try 닫기
+		catch(Exception err){
+			err.printStackTrace();
+		}
+		finally{
+			if(rs != null){try{rs.close();}catch(Exception err){}}
+			if(pstmt != null){try{pstmt.close();}catch(Exception err){}}
+			if(con != null){try{con.close();}catch(Exception err){}}
+		}
+	}
 }

@@ -19,7 +19,7 @@
   
   <servlet>
   	<servlet-name>prjLogin</servlet-name>
-  	<servlet-class>prjbean.LoginProc</servlet-class>
+  	<servlet-class>prjbean.MainProc</servlet-class>
   </servlet>
   
   <servlet-mapping>

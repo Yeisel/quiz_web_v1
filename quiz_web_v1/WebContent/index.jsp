@@ -116,6 +116,7 @@ strong, b{
 									</header>
 									
 									<form method="post" action="login.do">
+										<input type="hidden" name="user_Id" value="<%=session.getAttribute("logged")%>"/>
 										<input type="hidden" name="home" value="<%=session.getAttribute("logged")%>"/>
 										<button type="submit"><strong style="font-size:18px; color:red;">집에가기</strong></button>
 									</form>
