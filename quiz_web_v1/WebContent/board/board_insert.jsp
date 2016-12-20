@@ -14,74 +14,65 @@
 </head>
 
    <style>
-   a1 {
-      font-size: 80px;
-      
-   }
-   
-   a2 {
-      font-size: 15px;
-   }
-   
-   
-   h1, h2, h3, h4, h5, h6 {
-      color: #3d4449;
-      font-family: "Open Sans", sans-serif;
-      font-weight: 800;
-      line-height: 1.5;
-      margin: 0 0 1em 0;
-   }
+t1 {font-size: 80px;}
+
+t2 {font-size: 15px;}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #3d4449;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 800;
+	line-height: 1.5;
+	margin: 0 0 1em 0;
+}
+
+td {text-align: left;}
+
+th {text-align: left;}
    
    </style>
 
 
 <body>
 
-      <!-- Wrapper -->
-         <div id="wrapper">
+     <!-- Wrapper -->
+	<div id="wrapper">
 
-            <!-- Main -->
-               <div id="main">
-                  <div class="inner">
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
 
-                     <!-- Header -->
-                        <header id="header">
-                           <a href="#" class="logo"><a1><strong>Quiz Book</strong></a1>&nbsp;&nbsp;&nbsp; by firstclass</a>
-                           
-                        </header>
+				<!-- Header -->
+				<header id="header"><a href="#" class="logo"><t1><strong>Quiz Book</strong></t1>&nbsp;&nbsp;&nbsp; by firstclass</a></header>
 
-                     <!-- Content -->
-                        <section>
-                        <!-- 
-                           <header class="main">
-                              <h1>하이하이하이</h1>
-                           </header>
-                         -->
-                           <!-- Content -->
-                              <h2 id="content">COMMUNITY</h2>
-                              <p>유저들과 자유로운 소통공간</p>
-                           <hr class="major" />
+				<br />
+				<br />
+				<br />
+				<h2 id="content">COMMUNITY</h2>
+				<p>유저들과 자유로운 소통공간</p>
+				<hr class="major" />
                            
                            <!-- Form -->
                                        <h2>글쓰기</h2>
 
-                                       <form method="post" action="board_insert_proc.jsp">
+                                       <form method="post" action="board_insert.do">
                                           <div class="row uniform">
                                              <div class="6u 12u$(xsmall)">
-                                                <input type="text" name="userid" placeholder="ID" />
+                                                <input type="text" name="f_board_id" placeholder="ID" />
                                              </div>
-                                             <!-- <div class="6u$ 12u$(xsmall)">
+                                             <div class="6u$ 12u$(xsmall)">
                                                  <input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" /> 
-                                             </div> -->
+                                             </div>
                                              <!-- Break -->
                                              <div class="12u$">
                                                 <div class="select-wrapper">
-                                                   <input type="text" name="subject" placeholder="Title" />
+                                                   <input type="text" name="f_board_title" placeholder="Title" />
                                                 </div>
                                              </div>
+                                             
                                              <!-- Break -->
                                              <div class="12u$">
-                                                <textarea name="contents" placeholder="Enter your message" rows="6"></textarea>
+                                                <textarea name="f_board_content" placeholder="Enter your message" rows="6"></textarea>
                                              </div>
                                              <!-- Break -->
                                              <div class="12u$">
@@ -93,29 +84,7 @@
                                           </div>
                                        </form>
                            
-                           
-                           
-                           <!-- Table -->
-                                <h3>자유 게시판</h3>
-                                <div class="table-wrapper">
-                                   <table>
-                                      <thead>
-                                         <tr>
-                                            <th style="text-align:left" width="10%"><a2>번호</a2></th>
-                                            <th style="text-align:left" width="40%"><a2>게시물 제목</a2></th>
-                                            <th style="text-align:left" width="15%"><a2>게시자</a2></th>
-                                            <th style="text-align:left" width="10%"><a2>조회수</a2></th>
-                                            <th style="text-align:left" width="15%"><a2>게시일</a2></th>
-                                            <th style="text-align:left" width="10%"><a2>좋아요</a2></th>
-                                            
-                                         </tr>
- 
-
-
-                          
-                    </table>
-                 </div>
-                           
+                      
 
                                        <ul class="pagination" align="center">
                                           <li><span class="button disabled">Prev</span></li>
@@ -128,16 +97,12 @@
                                           <li><a href="#" class="button">Next</a></li>
                                        </ul>
 
-					</section>
 
-
-      <!-- Scripts -->
+</body>
+ <!-- Scripts -->
          <script src="../assets/js/jquery.min.js"></script>
          <script src="../assets/js/skel.min.js"></script>
          <script src="../assets/js/util.js"></script>
          <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
          <script src="../assets/js/main.js"></script>
-
-
-</body>
 </html>

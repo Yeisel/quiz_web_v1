@@ -11,6 +11,7 @@ import javax.sql.DataSource;
 
 
 
+
 public class BDao {
 
 	DataSource dataSource;
@@ -45,8 +46,8 @@ public class BDao {
 			while (resultSet.next()) {
 				
 				int f_board_number = resultSet.getInt("f_board_number");
-				String f_board_subject = resultSet.getString("f_board_subject");
-				String f_board_contents = resultSet.getString("f_board_contents");
+				String f_board_title = resultSet.getString("f_board_title");
+				String f_board_content = resultSet.getString("f_board_content");
 				String f_board_id = resultSet.getString("f_board_id");
 				int f_board_count = resultSet.getInt("f_board_count");
 				String f_board_firstdate = resultSet.getString("f_board_firstdate");
@@ -56,7 +57,7 @@ public class BDao {
 				int f_board_pos = resultSet.getInt("f_board_pos");
 				int f_board_depth = resultSet.getInt("f_board_depth");
 				
-				BDto dto = new BDto(f_board_number, f_board_subject, f_board_contents, f_board_id, 
+				BDto dto = new BDto(f_board_number, f_board_title, f_board_content, f_board_id, 
 						f_board_count, f_board_firstdate, f_board_date, f_board_good, f_board_bad, f_board_pos, f_board_depth);
 				
 				dtos.add(dto);
@@ -78,6 +79,37 @@ public class BDao {
 		return dtos;
 	}
 	
+	public void write(String f_board_id, String f_board_title, String f_board_content) {
+		// TODO Auto-generated method stub
+		
+		
+		System.out.println("write start...");
+		System.out.println(f_board_id);
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		
+		try {
+			connection = dataSource.getConnection();
+			String query = "insert into f_board (f_board_id, f_board_title, f_board_content) values (?, ?, ?)";
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setString(1, f_board_id);
+			preparedStatement.setString(2, f_board_title);
+			preparedStatement.setString(3, f_board_content);
+			int rn = preparedStatement.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			try {
+				if(preparedStatement != null) preparedStatement.close();
+				if(connection != null) connection.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+				e2.printStackTrace();
+			}
+		}
+		
+	}
 	
 	public BDto Read(String idx) {
 		// TODO Auto-generated method stub
@@ -101,8 +133,8 @@ public class BDao {
 			if(resultSet.next()) {
 
 				int f_board_number = resultSet.getInt("f_board_number");
-				String f_board_subject = resultSet.getString("f_board_subject");
-				String f_board_contents = resultSet.getString("f_board_contents");
+				String f_board_title = resultSet.getString("f_board_title");
+				String f_board_content = resultSet.getString("f_board_content");
 				String f_board_id = resultSet.getString("f_board_id");
 				int f_board_count = resultSet.getInt("f_board_count");
 				String f_board_firstdate = resultSet.getString("f_board_firstdate");
@@ -112,7 +144,7 @@ public class BDao {
 				int f_board_pos = resultSet.getInt("f_board_pos");
 				int f_board_depth = resultSet.getInt("f_board_depth");
 				
-				dto = new BDto(f_board_number, f_board_subject, f_board_contents, f_board_id, 
+				dto = new BDto(f_board_number, f_board_title, f_board_content, f_board_id, 
 						f_board_count, f_board_firstdate, f_board_date, f_board_good, f_board_bad, f_board_pos, f_board_depth);
 			}
 			

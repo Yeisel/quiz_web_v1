@@ -48,11 +48,11 @@ th {
 			<div class="inner">
 
 				<!-- Header -->
-				<header id="header"> <a href="#" class="logo"> <t1>
-					<strong>Quiz Book</strong></t1> &nbsp;&nbsp;&nbsp; by firstclass
-				</a> </header>
+				<header id="header"><a href="#" class="logo"><t1><strong>Quiz Book</strong></t1>&nbsp;&nbsp;&nbsp; by firstclass</a></header>
 
-				<br /> <br /> <br />
+				<br />
+				<br />
+				<br />
 				<h2 id="content">COMMUNITY</h2>
 				<p>유저들과 자유로운 소통공간</p>
 				<hr class="major" />
@@ -119,8 +119,7 @@ th {
 				<br /> <br />
 
 
-
-	<jsp:include page="side_bar.jsp" flush="false" />
+	
 </body>
 <!-- Scripts -->
 <script src="../assets/js/jquery.min.js"></script>

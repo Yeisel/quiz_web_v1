@@ -2,8 +2,8 @@ package com.javalec.boardcon;
 
 public class BDto {
 	int f_board_number;
-	String f_board_subject;
-	String f_board_contents;
+	String f_board_title;
+	String f_board_content;
 	String f_board_id;
 	int f_board_count;
 	String f_board_firstdate;
@@ -16,13 +16,13 @@ public class BDto {
 	
 	public BDto() {}
 
-	public BDto(int f_board_number, String f_board_subject, String f_board_contents, String f_board_id,
+	public BDto(int f_board_number, String f_board_title, String f_board_content, String f_board_id,
 			int f_board_count, String f_board_firstdate, String f_board_date, int f_board_good, int f_board_bad, int f_board_pos,
 			int f_board_depth) {
 		
 		this.f_board_number = f_board_number;
-		this.f_board_subject = f_board_subject;
-		this.f_board_contents = f_board_contents;
+		this.f_board_title = f_board_title;
+		this.f_board_content = f_board_content;
 		this.f_board_id = f_board_id;
 		this.f_board_count = f_board_count;
 		this.f_board_date = f_board_firstdate;
@@ -41,20 +41,20 @@ public class BDto {
 		this.f_board_number = f_board_number;
 	}
 
-	public String getF_board_subject() {
-		return f_board_subject;
+	public String getF_board_title() {
+		return f_board_title;
 	}
 
-	public void setF_board_subject(String f_board_subject) {
-		this.f_board_subject = f_board_subject;
+	public void setF_board_title(String f_board_title) {
+		this.f_board_title = f_board_title;
 	}
 
-	public String getF_board_contents() {
-		return f_board_contents;
+	public String getF_board_content() {
+		return f_board_content;
 	}
 
-	public void setF_board_contents(String f_board_contents) {
-		this.f_board_contents = f_board_contents;
+	public void setF_board_content(String f_board_content) {
+		this.f_board_content = f_board_content;
 	}
 
 	public String getF_board_id() {

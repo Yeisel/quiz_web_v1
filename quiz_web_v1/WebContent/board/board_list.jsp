@@ -43,9 +43,7 @@ th {text-align: left;}
 			<div class="inner">
 
 				<!-- Header -->
-				<header id="header"> <a href="#" class="logo"> <t1>
-					<strong>Quiz Book</strong></t1> &nbsp;&nbsp;&nbsp; by firstclass
-				</a> </header>
+				<header id="header"><a href="#" class="logo"><t1><strong>Quiz Book</strong></t1>&nbsp;&nbsp;&nbsp; by firstclass</a></header>
 
 				<br />
 				<br />
@@ -76,12 +74,12 @@ th {text-align: left;}
 								<td style="text-align: left">
 									<div class="6u$ 12u$(small)">
 										<input type="checkbox" id="select${dto.f_board_number}"
-											name="select"> <label
-											for="demo-human${dto.f_board_number}"></label>
+											name="select"> 
+										<label for="select${dto.f_board_number}"></label>
 									</div>
 								</td>
 								<td>${dto.f_board_number}</td>
-								<td><a href="board_read.do?idx=${dto.f_board_number}">${dto.f_board_subject}</a></td>
+								<td><a href="board_read.do?idx=${dto.f_board_number}">${dto.f_board_title}</a></td>
 								<td>${dto.f_board_id}</td>
 								<td>${dto.f_board_count}</td>
 								<td>${dto.f_board_date}</td>
@@ -96,13 +94,21 @@ th {text-align: left;}
 					</table>
 				</div>
 
-				<span style="float: left"> <input type="text"> <a
-					href="#" class="button special">검색</a>
-				</span> <span style="float: right"> <a href="#"
-					class="button special" onclick="window.location='board_insert.jsp'">글쓰기</a>
-					<a href="#" class="button special"
-					onclick="javascript:history.back(-1)">처음으로</a>
-				</span> <br />
+				
+				<span style="float: left">
+				<input type="text"> <a href="#" class="button special">검색</a>
+				</span>
+				
+							
+				
+				<span style="float: right">
+					<a href="#" class="button special" onclick="window.location='board_insert.jsp'">글쓰기</a>
+					<a href="#" class="button special" onclick="window.location='board_list.do'">처음으로</a>
+				</span>
+				
+				
+				
+				<br />
 				<br />
 
 
@@ -123,7 +129,6 @@ th {text-align: left;}
 		</div>
 	</div>
 	
-<jsp:include page="side_bar.jsp" flush="false" />
 
 </body>
 	<!-- Scripts -->

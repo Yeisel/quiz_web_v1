@@ -28,6 +28,8 @@ th {text-align: left;}
 </style>
 <body>
 
+	<!-- <jsp:include page="side_bar.jsp" flush="false" /> -->
+
 <!-- Sidebar -->
 					<div id="sidebar">
 						<div class="inner">

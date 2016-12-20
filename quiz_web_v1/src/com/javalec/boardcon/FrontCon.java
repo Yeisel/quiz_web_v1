@@ -46,11 +46,12 @@ public class FrontCon extends HttpServlet {
 		// TODO Auto-generated method stub
 		System.out.println("actionDo");
 		
-		request.setCharacterEncoding("EUC-KR");
+		request.setCharacterEncoding("UTF-8");
 		
 		String viewPage = null;
 		BListCon listcon = null;
 		BReadCon readcon = null;
+		BInsertCon insertcon = null;
 		
 		String uri = request.getRequestURI();
 		String conPath = request.getContextPath();
@@ -70,6 +71,12 @@ public class FrontCon extends HttpServlet {
 			readcon = new BReadCon();
 			readcon.execute(request, response);
 			viewPage = "board_read.jsp";
+		}
+		
+		if(com.equals("/board/board_insert.do")) {
+			insertcon = new BInsertCon();
+			insertcon.execute(request, response);
+			viewPage = "board_list.do";
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
