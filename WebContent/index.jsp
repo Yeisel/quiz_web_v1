@@ -11,6 +11,7 @@
 </script>
 
 <link rel="stylesheet" href="assets/css/main.css" />
+<link href="css/bootstrap.min.css" rel="stylesheet">
 <style>
 h1, h2, h3, h4, h5, h6{
 	color:#3d4449;
@@ -28,6 +29,7 @@ strong, b{
 </style>
 </head>
 	<body>
+	<input type="radio" name="r1"/>라디오버튼
 
 
 		<!-- Wrapper -->

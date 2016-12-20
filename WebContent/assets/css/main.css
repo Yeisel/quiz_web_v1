@@ -3791,7 +3791,7 @@
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		border-bottom: solid 5px #f56a6a;
+		border-bottom: solid 1px #f56a6a;
 		padding: 2em 0 0em 0;
 		position: relative;
 	}

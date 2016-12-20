@@ -6,6 +6,9 @@
 <title>Insert title here</title>
 </head>
 	<body>
-		<h1>포인트 조회</h1>
+		<h2>포인트 조회</h2>
+			
+		
+		
 	</body>
 </html>

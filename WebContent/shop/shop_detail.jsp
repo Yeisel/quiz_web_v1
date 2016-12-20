@@ -21,9 +21,9 @@
 		</div>
 	</div>
 	<div style="margin:30px;">
-		<div style="float:left"><a href="#"><button>목록으로</button></a></div>
-		<div style="float:right;"><a href="#"><button>장바구니</button></a></div>
-		<div style="float:right; margin-right:30px;"><a href="#"><button>구매하기</button></a></div>
+		<div style="float:left"><a href="index.jsp"><button>처음으로</button></a></div>
+		<div style="float:right;"><a href="javascript:parent.fnPageMove('shop/shop_cart.jsp')"><button>장바구니</button></a></div>
+		<div style="float:right; margin-right:30px;"><a href="javascript:parent.fnPageMove('shop/shop_cart.jsp')"><button>구매하기</button></a></div>
 		
 	</div>
 
