@@ -1,3 +1,5 @@
+/*
+
 package prjbean;
 
 import java.io.IOException;
@@ -149,3 +151,4 @@ public class MainProc extends HttpServlet {
 		if(con != null){try{con.close();}catch(Exception err){}}
 	}
 }
+*/

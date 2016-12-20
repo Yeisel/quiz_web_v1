@@ -9,21 +9,18 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
   <resource-ref>
-  	<description>DB Connection</description>
-  	<res-ref-name>jdbc/mysql</res-ref-name>
+    <description>DB Connection</description>
+    <res-ref-name>jdbc/mysql</res-ref-name>
     <res-type>javax.sql.DataSource</res-type>
     <res-auth>Container</res-auth>
   </resource-ref>
-  
   <servlet>
-  	<servlet-name>prjLogin</servlet-name>
-  	<servlet-class>prjbean.LoginProc</servlet-class>
+    <servlet-name>prjLogin</servlet-name>
+    <servlet-class>prjbean.LoginProc</servlet-class>
   </servlet>
-  
   <servlet-mapping>
-  	<servlet-name>prjLogin</servlet-name>
-  	<url-pattern>/login.do</url-pattern>
+    <servlet-name>prjLogin</servlet-name>
+    <url-pattern>/login.do</url-pattern>
   </servlet-mapping>
 </web-app>
