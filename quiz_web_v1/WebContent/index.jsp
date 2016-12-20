@@ -1,9 +1,9 @@
 <%@page import="prjdata.QuizUserDTO"%>
-<%@ page contentType="text/html; charset=EUC-KR"%>
+<%@ page contentType="text/html; charset=utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
 <script src="js/jquery-3.1.1.min.js"></script>
 <script>
@@ -15,7 +15,7 @@
 <style>
 h1, h2, h3, h4, h5, h6{
 	color:#3d4449;
-	font-family: "¸¼Àº °íµñ";
+	font-family: "ë§‘ì€ ê³ ë”•";
 	font-weight:800;
 	line-height:1.5;
 	margin:0 0 1em 0;
@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6{
 strong, b{
 	color:#3d4449;
 	font-weight: 600;
-	font-family: "¸¼Àº °íµñ";	
+	font-family: "ë§‘ì€ ê³ ë”•";	
 	
 }
 </style>
@@ -49,16 +49,16 @@ strong, b{
 										<span class="image object" style="float:right;">
 											<img src="images/pic10.jpg" alt="" />
 										</span>	
-										<h2>QuizBook¿¡ ¿À½Å°ÍÀ» È¯¿µÇÕ´Ï´Ù.<br />
+										<h2>QuizBookì— ì˜¤ì‹  ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤.<br />
 										by FirstClass Team</h2>
 	
-										<!-- <p>´Ù¾çÇÑ ÄûÁî¿¡ µµÀüÇØº¸¼¼¿ä</p> -->
+										<!-- <p>ë‹¤ì–‘í•œ í€´ì¦ˆì— ë„ì „í•´ë³´ì„¸ìš”</p> -->
 									</header>
 																		
-									<p>´Ù¾çÇÑ ÄûÁî¿¡ µµÀüÇÏ¿©, <br>¸í¿¹ÀÇ Àü´ç¿¡ ÀÌ¸§À» ¿Ã·Áº¸¼¼¿ä</p>
+									<p>ë‹¤ì–‘í•œ í€´ì¦ˆì— ë„ì „í•˜ì—¬, <br>ëª…ì˜ˆì˜ ì „ë‹¹ì— ì´ë¦„ì„ ì˜¬ë ¤ë³´ì„¸ìš”</p>
 									
 									<ul class="actions">
-									<li><a href="javascript:fnPageMove('quiz/quiz_main.jsp')" class="button big">ÄûÁîµµÀü</a></li>
+									<li><a href="javascript:fnPageMove('quiz/quiz_main.jsp')" class="button big">í€´ì¦ˆë„ì „</a></li>
 									</ul>
 
 									</div>
@@ -87,21 +87,21 @@ strong, b{
 									<form method="post" action="login.do">
 										<input type="text" name="user_Id" id="user_Id" placeholder="Id" />
 										<input type="text" name="user_Pw" id="user_Pw" placeholder="Password" /><br/>
-										<button type="submit"><strong style="font-size:13px; color:red;">·Î±×ÀÎ</strong></button>
+										<button type="submit"><strong style="font-size:13px; color:red;">ë¡œê·¸ì¸</strong></button>
 									</form>
-									<a href="javascript:fnPageMove('mypage/join_new.jsp')" class="button"><strong style="font-size:13px; color:gray;">È¸¿ø°¡ÀÔ</strong></a>
+									<a href="javascript:fnPageMove('mypage/join_new.jsp')" class="button"><strong style="font-size:13px; color:gray;">íšŒì›ê°€ìž…</strong></a>
 <%			
 			}
 			else{
 %>					
 					<form method="post" action="login.do">
 						<input type="hidden" name="logout" value="guest"/>
-						<strong style="font-size:25px;font-weight:1000px"><%=session.getAttribute("logged")%></strong> ´Ô ¾î¼­¿À¼¼¿ä!!
+						<strong style="font-size:25px;font-weight:1000px"><%=session.getAttribute("logged")%></strong> ë‹˜ ì–´ì„œì˜¤ì„¸ìš”!!
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
-						<button type="submit"><strong style="font-size:13px; color:red;">·Î±×¾Æ¿ô</strong></button>
-						<a href="javascript:fnPageMove('mypage/my_main.jsp')" class="button"><strong style="font-size:13px; color:red;">¸¶ÀÌÆäÀÌÁö</strong></a><br/>
+						<button type="submit"><strong style="font-size:13px; color:red;">ë¡œê·¸ì•„ì›ƒ</strong></button>
+						<a href="javascript:fnPageMove('mypage/my_main.jsp')" class="button"><strong style="font-size:13px; color:red;">ë§ˆì´íŽ˜ì´ì§€</strong></a><br/>
 						<br/>
-						º¸À¯Æ÷ÀÎÆ® : <%=dto.getUser_Current_Point()%>
+						ë³´ìœ í¬ì¸íŠ¸ : <%=dto.getUser_Current_Point()%>
 						
 					</form>
 <%
@@ -119,39 +119,39 @@ strong, b{
 									<form method="post" action="login.do">
 										<input type="hidden" name="user_Id" value="<%=session.getAttribute("logged")%>"/>
 										<input type="hidden" name="home" value="<%=session.getAttribute("logged")%>"/>
-										<button type="submit"><strong style="font-size:18px; color:red;">Áý¿¡°¡±â</strong></button>
+										<button type="submit"><strong style="font-size:18px; color:red;">ì§‘ì—ê°€ê¸°</strong></button>
 									</form>
 									
 									<ul>
 										<li>
-											<span class="opener"><a href="javascript:fnPageMove('quiz/quiz_main.jsp')"><strong style="font-size:18px;">ÄûÁî</strong></a></span>
+											<span class="opener"><a href="javascript:fnPageMove('quiz/quiz_main.jsp')"><strong style="font-size:18px;">í€´ì¦ˆ</strong></a></span>
 											<ul>
-												<li><a href="javascript:fnPageMove('quiz/quiz_sang.jsp')"><strong style="font-size:14px;">»ó½Ä</strong></a></li>
-												<li><a href="javascript:fnPageMove('quiz/quiz_nsense.jsp')"><strong style="font-size:14px;">³Í¼¾½º</strong></a></li>
-												<li><a href="javascript:fnPageMove('quiz/quiz_sports.jsp')"><strong style="font-size:14px;">½ºÆ÷Ã÷</strong></a></li>
-												<li><a href="javascript:fnPageMove('quiz/quiz_history.jsp')"><strong style="font-size:14px;">¿ª»ç</strong></a></li>
+												<li><a href="javascript:fnPageMove('quiz/quiz_sang.jsp')"><strong style="font-size:14px;">ìƒì‹</strong></a></li>
+												<li><a href="javascript:fnPageMove('quiz/quiz_nsense.jsp')"><strong style="font-size:14px;">ë„Œì„¼ìŠ¤</strong></a></li>
+												<li><a href="javascript:fnPageMove('quiz/quiz_sports.jsp')"><strong style="font-size:14px;">ìŠ¤í¬ì¸ </strong></a></li>
+												<li><a href="javascript:fnPageMove('quiz/quiz_history.jsp')"><strong style="font-size:14px;">ì—­ì‚¬</strong></a></li>
 											</ul>
 										</li>
 										<li>
-											<span class="opener"><strong style="font-size:18px;">Æ÷ÀÎÆ®¸ô</strong></span>
+											<span class="opener"><strong style="font-size:18px;">í¬ì¸íŠ¸ëª°</strong></span>
 											<ul>
-												<li><a href="javascript:fnPageMove('shop/shop_main.jsp')"><strong style="font-size:14px;">¼îÇÎ¸ô</strong></a></li>
-												<li><a href="javascript:fnPageMove('shop/shop_order.jsp')"><strong style="font-size:14px;">ÁÖ¹®¹è¼ÛÁ¶È¸</strong></a></li>
-												<li><a href="javascript:fnPageMove('shop/shop_cart.jsp')"><strong style="font-size:14px;">Àå¹Ù±¸´Ï</strong></a></li>
-												<li><a href="javascript:fnPageMove('shop/shop_point.jsp')"><strong style="font-size:14px;">Æ÷ÀÎÆ®Á¶È¸</strong></a></li>
+												<li><a href="javascript:fnPageMove('shop/shop_main.jsp')"><strong style="font-size:14px;">ì‡¼í•‘ëª°</strong></a></li>
+												<li><a href="javascript:fnPageMove('shop/shop_order.jsp')"><strong style="font-size:14px;">ì£¼ë¬¸ë°°ì†¡ì¡°íšŒ</strong></a></li>
+												<li><a href="javascript:fnPageMove('shop/shop_cart.jsp')"><strong style="font-size:14px;">ìž¥ë°”êµ¬ë‹ˆ</strong></a></li>
+												<li><a href="javascript:fnPageMove('shop/shop_point.jsp')"><strong style="font-size:14px;">í¬ì¸íŠ¸ì¡°íšŒ</strong></a></li>
 											
 											
 											</ul>
 										</li>
 										<li>
-											<span class="opener"><strong style="font-size:18px;">Ä¿¹Â´ÏÆ¼</strong></span>
+											<span class="opener"><strong style="font-size:18px;">ì»¤ë®¤ë‹ˆí‹°</strong></span>
 											<ul>
-												<li><a href="javascript:fnPageMove('f_board/free_board.jsp')"><strong style="font-size:14px;">ÀÚÀ¯°Ô½ÃÆÇ</strong></a></li>
-												<li><a href="javascript:fnPageMove('n_board/notice_board.jsp')"><strong style="font-size:14px;">°øÁö°Ô½ÃÆÇ</strong></a></li>
-												<li><a href="javascript:fnPageMove('q_board/up_board.jsp')"><strong style="font-size:14px;">¹®Á¦¾÷·Îµå</strong></a></li>
+												<li><a href="javascript:fnPageMove('f_board/free_board.jsp')"><strong style="font-size:14px;">ìžìœ ê²Œì‹œíŒ</strong></a></li>
+												<li><a href="javascript:fnPageMove('n_board/notice_board.jsp')"><strong style="font-size:14px;">ê³µì§€ê²Œì‹œíŒ</strong></a></li>
+												<li><a href="javascript:fnPageMove('q_board/up_board.jsp')"><strong style="font-size:14px;">ë¬¸ì œì—…ë¡œë“œ</strong></a></li>
 											</ul>
 										</li>
-										<li><a href="#"><strong style="font-size:18px;">³îÀÌÅÍ</strong></a></li>
+										<li><a href="#"><strong style="font-size:18px;">ë†€ì´í„°</strong></a></li>
 										
 									</ul>
 								</nav>

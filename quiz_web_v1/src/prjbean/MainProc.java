@@ -23,11 +23,13 @@ public class MainProc extends HttpServlet {
 	HttpSession session = null;
 	RequestDispatcher dispatcher = null;
 	
+	// 로그인 프로세스 (index.jsp)
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doPost(req, resp);
 	}
 
+	// 로그인 프로세스 (index.jsp)
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
@@ -114,7 +116,7 @@ public class MainProc extends HttpServlet {
 			
 		}
 		
-		} // try 닫기
+		} // try 닫음
 		catch(Exception err){
 			err.printStackTrace();
 		}
@@ -125,6 +127,7 @@ public class MainProc extends HttpServlet {
 		}
 	}
 
+	// 석준 DB 로그인
 	public MainProc(){
 		try{
 			Context ctx = new InitialContext();
@@ -141,6 +144,7 @@ public class MainProc extends HttpServlet {
 		}
 	}
 	
+	// 테스트(변경해도 됨)
 	public void selectUser(String user_Name){
 		
 		try {
@@ -172,6 +176,7 @@ public class MainProc extends HttpServlet {
 		}
 	}
 	
+	// 테스트(변경해도 됨)
 	public void selectProduct(String product_Name){
 		try {
 			con = ds.getConnection();
@@ -194,6 +199,34 @@ public class MainProc extends HttpServlet {
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
+		}
+	}
+	
+	// 신규가입(mypage/join_new.jsp)
+	public void inputNewUser(QuizUserDTO dto){
+		System.out.println("inputNewUser(QuizUserDTO dto) : ");
+		
+		try{
+			con = ds.getConnection();
+			
+			String sql = "INSERT INTO user (user_id, user_email, user_password, user_name, user_address, user_phone_number, user_total_point, user_current_point, user_month_point) VALUES (?, ?, ?, ?, ?, ?, 0, 0, 0)"; 
+			
+			pstmt = con.prepareStatement(sql);  
+			
+			pstmt.setString(1, dto.getUser_Id());
+			pstmt.setString(2, dto.getUser_Email());
+			pstmt.setString(3, dto.getUser_Password());
+			pstmt.setString(4, dto.getUser_Name());
+			pstmt.setString(5, dto.getUser_Address());
+			pstmt.setString(6, dto.getUser_Phone_Number());
+			
+			pstmt.executeUpdate();
+		}
+		catch(Exception err){
+			err.printStackTrace();
+		}
+		finally{
+			freeConnection();
 		}
 	}
 	
