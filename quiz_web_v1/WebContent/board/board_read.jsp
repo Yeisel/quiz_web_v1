@@ -13,9 +13,13 @@
 </head>
 
 <style>
-t1 {font-size: 80px;}
+t1 {
+	font-size: 80px;
+}
 
-t2 {font-size: 15px;}
+t2 {
+	font-size: 15px;
+}
 
 h1, h2, h3, h4, h5, h6 {
 	color: #3d4449;
@@ -25,9 +29,13 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0 0 1em 0;
 }
 
-td {text-align: left;}
+td {
+	text-align: left;
+}
 
-th {text-align: left;}
+th {
+	text-align: left;
+}
 </style>
 
 <body>
@@ -44,9 +52,7 @@ th {text-align: left;}
 					<strong>Quiz Book</strong></t1> &nbsp;&nbsp;&nbsp; by firstclass
 				</a> </header>
 
-				<br />
-				<br />
-				<br />
+				<br /> <br /> <br />
 				<h2 id="content">COMMUNITY</h2>
 				<p>유저들과 자유로운 소통공간</p>
 				<hr class="major" />
@@ -72,14 +78,14 @@ th {text-align: left;}
 						</tr>
 						<tr>
 							<td align=center bgcolor=white>제 목</td>
-							<td bgcolor=white colspan=3> ${Read.f_board_subject }</td>
+							<td bgcolor=white colspan=3>${Read.f_board_subject }</td>
 						</tr>
 
 
 					</table>
 
 				</div>
-				
+
 				<!-- 본문 -->
 				<p>${Read.f_board_contents }</p>
 
@@ -91,7 +97,7 @@ th {text-align: left;}
 
 				<tr>
 					<td align=center colspan=2>[ <input type="button"
-						onclick="window.location='board_list.jsp'" value="목 록"> |
+						onclick="window.location='board_list.do'" value="목 록"> |
 						<input type="button" onclick="" value="수 정"> | <input
 						type="button" onclick="" value="삭 제"> | <input
 						type="button" onclick="" value="답 변"> ]<br>
@@ -114,13 +120,12 @@ th {text-align: left;}
 
 
 
-
-
-				<!-- Scripts -->
-				<script src="../assets/js/jquery.min.js"></script>
-				<script src="../assets/js/skel.min.js"></script>
-				<script src="../assets/js/util.js"></script>
-				<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-				<script src="../assets/js/main.js"></script>
+	<jsp:include page="side_bar.jsp" flush="false" />
 </body>
+<!-- Scripts -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/skel.min.js"></script>
+<script src="../assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="../assets/js/main.js"></script>
 </html>

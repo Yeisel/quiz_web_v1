@@ -1,17 +1,23 @@
-<%@page import="prjdata.QuizUserDTO"%>
 <%@ page contentType="text/html; charset=EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
-<script src="js/jquery-3.1.1.min.js"></script>
 <script>
 	function fnPageMove(page){
 		$("#here").load(page);
 	}
+	
+	<script>
+	function goBack() {
+	    window.history.go(-2);
+	}
+	
 </script>
+
 <link rel="stylesheet" href="assets/css/main.css" />
+<link href="css/bootstrap.min.css" rel="stylesheet">
 <style>
 h1, h2, h3, h4, h5, h6{
 	color:#3d4449;
@@ -43,7 +49,7 @@ strong, b{
 								</header>
 
 							<!-- Banner -->
-								<section id="banner">
+								<section >
 									<div class="here" id="here">
 									<header>
 										<span class="image object" style="float:right;">
@@ -65,7 +71,7 @@ strong, b{
 									
 								</section>
 
-							
+							<button onclick="goBack()">Go Back 2 Pages</button>
 							<!-- Section -->
 								
 
@@ -80,27 +86,24 @@ strong, b{
 
 								<section id="login" class="alt">
 <%         
-			QuizUserDTO dto = (QuizUserDTO)request.getAttribute("dto");
-			
 			if(session.getAttribute("logged") == null){
 %>	
-									<form method="post" action="login.do">
-										<input type="text" name="user_Id" id="user_Id" placeholder="Id" />
-										<input type="text" name="user_Pw" id="user_Pw" placeholder="Password" />
+									<form method="post" action="login.jsp">
+										<input type="text" name="userId" id="userId" placeholder="Id" />
+										<input type="text" name="userPw" id="userPw" placeholder="Password" />
 										<input type="submit" value="로그인" />	
 									</form>
 <%			
 			}
 			else{
-%>					
-					<form method="post" action="login.do">
+%>					<form method="post" action="login.jsp">
 						<input type="hidden" name="logout" value="guest"/>
-						<strong style="font-size:25px;font-weight:1000px"><%=session.getAttribute("logged")%></strong> 님 어서오세요!!
+						<img src="images/android-contact.png" width="18" height="18"/><br/>
+						<%=session.getAttribute("logged")%> 님 방가!!
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
-						<button type="submit"><strong style="font-size:13px; color:red;">로그아웃</strong></button>
-						<a href="javascript:fnPageMove('mypage/my_main.jsp')" class="button"><strong style="font-size:13px; color:red;">마이페이지</strong></a><br/>
-						<br/>
-						보유포인트 : <%=dto.getUser_Current_Point()%>
+						<input type="submit" value="로그아웃"/>
+						<a href="javascript:fnPageMove('mypage/my_main.jsp')"><input type="button" value="마이페이지" /></a><br/>
+						퀴즈포인트 : 
 						
 					</form>
 <%
@@ -115,7 +118,7 @@ strong, b{
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index.jsp"><strong style="font-size:18px;">집에가기</strong></a></li>
+										<li><a href="index.jsp"><strong style="font-size:18px;">HomePage</strong></a></li>
 										<li>
 											<span class="opener"><a href="javascript:fnPageMove('quiz/quiz_main.jsp')"><strong style="font-size:18px;">퀴즈</strong></a></span>
 											<ul>
@@ -139,7 +142,7 @@ strong, b{
 										<li>
 											<span class="opener"><strong style="font-size:18px;">커뮤니티</strong></span>
 											<ul>
-												<li><a href="javascript:fnPageMove('f_board/free_board.jsp')"><strong style="font-size:14px;">자유게시판</strong></a></li>
+												<li><a href="javascript:fnPageMove('board/board_list.do')"><strong style="font-size:14px;">자유게시판</strong></a></li>
 												<li><a href="javascript:fnPageMove('n_board/notice_board.jsp')"><strong style="font-size:14px;">공지게시판</strong></a></li>
 												<li><a href="javascript:fnPageMove('q_board/up_board.jsp')"><strong style="font-size:14px;">문제업로드</strong></a></li>
 											</ul>
@@ -161,13 +164,13 @@ strong, b{
 					</div>
 
 			</div>
-
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/ie/respond.min.js"></script>
 			<script src="assets/js/main.js"></script>
+
 
 	</body>
 </html>

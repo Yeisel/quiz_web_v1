@@ -6,6 +6,7 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
 <title>QuizBook FreeBoard</title>
 <meta charset="utf-8" />
@@ -121,6 +122,8 @@ th {text-align: left;}
 			</div>
 		</div>
 	</div>
+	
+<jsp:include page="side_bar.jsp" flush="false" />
 
 </body>
 	<!-- Scripts -->
