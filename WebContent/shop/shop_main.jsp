@@ -1,8 +1,8 @@
-<%@ page contentType="text/html; charset=EUC-KR"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style>
 
@@ -16,7 +16,7 @@
         <!-- Page Header -->
         <div >
             <div >
-                <h2 class="page-header">ΖχΐΞΖ® Έτ
+                <h2 class="page-header">ν¬μΈνΈ λª°
                 </h2>
             </div>
         </div>
@@ -30,10 +30,10 @@
 	                <img src="images/pic01.jpg" style="width:200px; height:100px;">
 	            </div>
 	            <div align="center" style="flex-basis:600px; width:600px;">
-	                <br/><h3>1Ήψ »σΗ°</h3>
+	                <br/><h3>1λ² μƒν’</h3>
 	            </div>
 	            <div style="flex-basis:200px; width:200px;">
-	            	<br/><h3>°΅°έ : ooo P</h3>
+	            	<br/><h3>κ°€κ²© : ooo P</h3>
 	            </div>    
 	            <div style="flex-basis:100px;width:100px;">
 	            	<br/><img vertical-align="middle" src="images/cart.jpg" style="width:60px; height:30px;"></img>

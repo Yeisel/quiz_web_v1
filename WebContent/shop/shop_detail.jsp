@@ -1,29 +1,29 @@
-<%@ page contentType="text/html; charset=EUC-KR"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KRUTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-		<h3>»óÇ°¸í <%="»óÇ°¸í" %></h3>
-<!-- »óÇ°ÀÌ¹ÌÁö -->
+		<h3>ìƒí’ˆëª… <%="ìƒí’ˆëª…" %></h3>
+<!-- ìƒí’ˆì´ë¯¸ì§€ -->
  	<div style="display:flex; border-top:1px solid black;border-bottom:1px solid black;" >
 		<div class="thumbBox" style="flex:1; padding:10px;" >
-				<span ><img src="images/pic01.jpg" alt="»óÇ°ÀÌ¹ÌÁö" style="width:350px; height:270px;"></span>
+				<span ><img src="images/pic01.jpg" alt="ìƒí’ˆì´ë¯¸ì§€" style="width:350px; height:270px;"></span>
 		</div>
 		<div style="flex:2">
-			<div style="height:50px; background:#eff1f2; "><strong>°¡°Ý : <%="°¡°Ý" %></strong></div>
-			<div style="height:50px;"><%="»óÇ°¼³¸í" %></div>
-			<div style="height:50px;">Á¦Á¶»ç : <%="Á¦Á¶»ç" %></div>
-			<div style="height:50px;">»óÇ°¹øÈ£ : <%="»óÇ°¹øÈ£" %></div>
-			<div style="height:50px;">Âü°í»çÇ× : <%="Âü°í»çÇ×" %></div>
+			<div style="height:50px; background:#eff1f2; "><strong>ê°€ê²© : <%="ê°€ê²©" %></strong></div>
+			<div style="height:50px;"><%="ìƒí’ˆì„¤ëª…" %></div>
+			<div style="height:50px;">ì œì¡°ì‚¬ : <%="ì œì¡°ì‚¬" %></div>
+			<div style="height:50px;">ìƒí’ˆë²ˆí˜¸ : <%="ìƒí’ˆë²ˆí˜¸" %></div>
+			<div style="height:50px;">ì°¸ê³ ì‚¬í•­ : <%="ì°¸ê³ ì‚¬í•­" %></div>
 		</div>
 	</div>
 	<div style="margin:30px;">
-		<div style="float:left"><a href="index.jsp"><button>Ã³À½À¸·Î</button></a></div>
-		<div style="float:right;"><a href="javascript:parent.fnPageMove('shop/shop_cart.jsp')"><button>Àå¹Ù±¸´Ï</button></a></div>
-		<div style="float:right; margin-right:30px;"><a href="javascript:parent.fnPageMove('shop/shop_cart.jsp')"><button>±¸¸ÅÇÏ±â</button></a></div>
+		<div style="float:left"><a href="index.jsp"><button>ì²˜ìŒìœ¼ë¡œ</button></a></div>
+		<div style="float:right;"><a href="javascript:parent.fnPageMove('shop/shop_cart.jsp')"><button>ìž¥ë°”êµ¬ë‹ˆ</button></a></div>
+		<div style="float:right; margin-right:30px;"><a href="javascript:parent.fnPageMove('shop/shop_cart.jsp')"><button>êµ¬ë§¤í•˜ê¸°</button></a></div>
 		
 	</div>
 

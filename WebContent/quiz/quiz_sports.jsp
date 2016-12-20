@@ -1,13 +1,13 @@
-<%@ page contentType="text/html; charset=EUC-KR"%>
+<%@ page contentType="text/html; charset=UFT-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 	<body>
-		<h1>½ºÆ÷Ã÷ ÄûÁî</h1>
-		<a href="#">ÄûÁîÇ®±â</a>
-		<a href="index.jsp">¸ÞÀÎÀ¸·Î</a>
+		<h1>ìŠ¤í¬ì¸  í€´ì¦ˆ</h1>
+		<a href="#">í€´ì¦ˆ í’€ê¸°</a>
+		<a href="index.jsp">ë©”ì¸ìœ¼ë¡œ</a>
 	</body>
 </html>

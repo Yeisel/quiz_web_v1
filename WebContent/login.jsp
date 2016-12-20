@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=EUC-KR"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -13,17 +13,17 @@
 	String guest = "guest";
 		
 	if(id.equals(request.getParameter("userId")) && pass.equals(request.getParameter("userPw"))){
-		System.out.println("Ã¹¹øÂ° if¹® ÁøÀÔ");
+		System.out.println("ì²«ë²ˆì§¸ ifë¬¸ ì§„ì…");
 		session.setAttribute("logged", id);
 		response.sendRedirect("index.jsp");
 	}
 	else if(guest.equals(request.getParameter("logout"))){
-		System.out.println("2¹øÂ° if¹® ÁøÀÔ");
+		System.out.println("2ë²ˆì§¸ ifë¬¸ ì§„ì…");
 		session.invalidate();
 		response.sendRedirect("index.jsp");
 	}
 	else{
-		System.out.println("3¹øÂ° if¹® ÁøÀÔ");
+		System.out.println("3ë²ˆì§¸ ifë¬¸ ì§„ì…");
 		session.invalidate();
 		response.sendRedirect("index.jsp");
 	}

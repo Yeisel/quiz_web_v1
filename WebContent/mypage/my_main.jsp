@@ -1,11 +1,11 @@
-<%@ page contentType="text/html; charset=EUC-KR"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 	<body>
-		<h1>¸¶ÀÌÆäÀÌÁö</h1>
+		<h1>ë§ˆì´í˜ì´ì§€</h1>
 	</body>
 </html>
