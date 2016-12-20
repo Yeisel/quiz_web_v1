@@ -1,5 +1,4 @@
 <%@page import="java.util.List"%>
-<%@page import="com.javalec.boardcon.BDto"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ page import="java.sql.*"%>
@@ -16,9 +15,9 @@
 
 </head>
 <style>
-a1 {font-size: 80px;}
+t1 {font-size: 80px;}
 
-a2 {font-size: 15px;}
+t2 {font-size: 15px;}
 
 h1, h2, h3, h4, h5, h6 {
 	color: #3d4449;
@@ -29,6 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 td {text-align: left;}
+
 th {text-align: left;}
 </style>
 
@@ -42,45 +42,53 @@ th {text-align: left;}
 			<div class="inner">
 
 				<!-- Header -->
-				<header id="header"> <a href="#" class="logo"><a1>
-					<strong>Quiz Book</strong></a1> &nbsp;&nbsp;&nbsp; by firstclass</a> </header>
+				<header id="header"> <a href="#" class="logo"> <t1>
+					<strong>Quiz Book</strong></t1> &nbsp;&nbsp;&nbsp; by firstclass
+				</a> </header>
 
+				<br />
+				<br />
+				<br />
 				<h2 id="content">COMMUNITY</h2>
 				<p>유저들과 자유로운 소통공간</p>
 				<hr class="major" />
-
+				
+				<!-- Table -->
 				<h3>자유 게시판</h3>
 				<div class="table-wrapper">
 					<table>
 						<thead>
 							<tr>
-								<th width="5%"><a2>선택</a2></th>
-								<th width="10%"><a2>번호</a2></th>
-								<th width="35%"><a2>게시물 제목</a2></th>
-								<th width="15%"><a2>게시자</a2></th>
-								<th width="10%"><a2>조회수</a2></th>
-								<th width="15%"><a2>게시일</a2></th>
-								<th width="10%"><a2>좋아요</a2></th>
+								<th width="5%"><t2>선택</t2></th>
+								<th width="10%"><t2>번호</t2></th>
+								<th width="35%"><t2>게시물 제목</t2></th>
+								<th width="15%"><t2>게시자</t2></th>
+								<th width="10%"><t2>조회수</t2></th>
+								<th width="15%"><t2>게시일</t2></th>
+								<th width="10%"><t2>좋아요</t2></th>
 							</tr>
 						</thead>
 
 						<c:forEach items="${list}" var="dto">
 							<tr>
-							<tr height="25" align="center">
+								<tr height="25" align="center">
 								<td style="text-align: left">
 									<div class="6u$ 12u$(small)">
-										<input type="checkbox" id="select${dto.f_board_number}" name="select"> 
-										<label for="demo-human${dto.f_board_number}"></label>
+										<input type="checkbox" id="select${dto.f_board_number}"
+											name="select"> <label
+											for="demo-human${dto.f_board_number}"></label>
 									</div>
 								</td>
 								<td>${dto.f_board_number}</td>
-								<td><a href="board_read.jsp?idx=${dto.f_board_number}">${dto.f_board_subject}</a></td>
+								<td><a href="board_read.do?idx=${dto.f_board_number}">${dto.f_board_subject}</a></td>
 								<td>${dto.f_board_id}</td>
 								<td>${dto.f_board_count}</td>
 								<td>${dto.f_board_date}</td>
 								<td>${dto.f_board_good}</td>
 							</tr>
+							
 
+						
 						</c:forEach>
 
 
@@ -109,15 +117,17 @@ th {text-align: left;}
 					<li><a href="#" class="button">다음</a></li>
 				</ul>
 
+				<br /><br /><br /><br /><br /><br />
+			</div>
+		</div>
+	</div>
 
-
-				<!-- Scripts -->
-				<script src="../assets/js/jquery.min.js"></script>
-				<script src="../assets/js/skel.min.js"></script>
-				<script src="../assets/js/util.js"></script>
-				<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-				<script src="../assets/js/main.js"></script>
-
-				<br/><br/><br/><br/><br/><br/>
 </body>
+	<!-- Scripts -->
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/skel.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="../assets/js/main.js"></script>
+
 </html>

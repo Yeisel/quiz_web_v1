@@ -49,7 +49,8 @@ public class FrontCon extends HttpServlet {
 		request.setCharacterEncoding("EUC-KR");
 		
 		String viewPage = null;
-		BListCon command = null;
+		BListCon listcon = null;
+		BReadCon readcon = null;
 		
 		String uri = request.getRequestURI();
 		String conPath = request.getContextPath();
@@ -60,9 +61,15 @@ public class FrontCon extends HttpServlet {
 		System.out.println(com);
 		
 		if(com.equals("/board/board_list.do")) {
-			command = new BListCon();
-			command.execute(request, response);
+			listcon = new BListCon();
+			listcon.execute(request, response);
 			viewPage = "board_list.jsp";
+		}
+		
+		if(com.equals("/board/board_read.do")) {
+			readcon = new BReadCon();
+			readcon.execute(request, response);
+			viewPage = "board_read.jsp";
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);

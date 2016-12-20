@@ -128,7 +128,7 @@
                                           <li><a href="#" class="button">Next</a></li>
                                        </ul>
 
-
+					</section>
 
 
       <!-- Scripts -->
