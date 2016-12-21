@@ -34,7 +34,6 @@ th {text-align: left;}
 </style>
 
 <body>
-
 	<!-- Wrapper -->
 	<div id="wrapper">
 
@@ -59,12 +58,12 @@ th {text-align: left;}
 						<thead>
 							<tr>
 								<th width="5%"><t2>선택</t2></th>
-								<th width="10%"><t2>번호</t2></th>
-								<th width="35%"><t2>게시물 제목</t2></th>
-								<th width="15%"><t2>게시자</t2></th>
+								<th width="5%"><t2>번호</t2></th>
+								<th width="50%"><t2>게시물 제목</t2></th>
+								<th width="10%"><t2>게시자</t2></th>
 								<th width="10%"><t2>조회수</t2></th>
 								<th width="15%"><t2>게시일</t2></th>
-								<th width="10%"><t2>좋아요</t2></th>
+								<th width="5%"><t2>좋아요</t2></th>
 							</tr>
 						</thead>
 
@@ -82,7 +81,7 @@ th {text-align: left;}
 								<td><a href="board_read.do?idx=${dto.f_board_number}">${dto.f_board_title}</a></td>
 								<td>${dto.f_board_id}</td>
 								<td>${dto.f_board_count}</td>
-								<td>${dto.f_board_date}</td>
+								<td>${dto.f_board_firstdate}</td>
 								<td>${dto.f_board_good}</td>
 							</tr>
 							
@@ -112,16 +111,15 @@ th {text-align: left;}
 				<br />
 
 
-
 				<ul class="pagination" align="center">
 					<li><span class="button disabled">이전</span></li>
-					<li><a href="#" class="page active">1</a></li>
-					<li><a href="#" class="page">2</a></li>
-					<!-- <li><span>&hellip;</span></li> -->
-					<li><a href="#" class="page">3</a></li>
-					<li><a href="#" class="page">4</a></li>
-					<li><a href="#" class="page">5</a></li>
+					<li><a href="#" class="page active" onclick="window.location ='board_list.do?page=1'">1.</a></li>
+					<li><a href="#" class="page" onclick="window.location ='board_list.do?page=2'">2</a></li>
+					<li><a href="#" class="page" onclick="window.location ='board_list.do?page=3'">3</a></li>
+					<li><a href="#" class="page" onclick="window.location ='board_list.do?page=4'">4</a></li>
+					<li><a href="#" class="page" onclick="window.location ='board_list.do?page=5'">5</a></li>
 					<li><a href="#" class="button">다음</a></li>
+					<!-- <li><span>&hellip;</span></li> -->
 				</ul>
 
 				<br /><br /><br /><br /><br /><br />

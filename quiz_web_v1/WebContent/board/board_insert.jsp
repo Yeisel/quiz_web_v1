@@ -78,7 +78,8 @@ th {text-align: left;}
                                              <div class="12u$">
                                                 <ul class="actions">
                                                    <li><input type="submit" value="글올리기" class="special" onclick="javascript:writeCheck();"/></li>
-                                                   <li><input type="reset" value="다시쓰기" onclick="javascript:history.back(-1)"/></li>
+                                                   <li><input type="reset" value="다시쓰기" onclick=""/></li>
+                                                   <li><input type="button" value="목록으로" onclick="window.location='board_list.do'"/></li>
                                                 </ul>
                                              </div>
                                           </div>

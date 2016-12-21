@@ -39,6 +39,7 @@ th {
 </style>
 
 <body>
+
 	<!-- Wrapper -->
 	<div id="wrapper">
 
@@ -65,9 +66,9 @@ th {
 					<table border=0 cellpadding=3 cellspacing=0 width=100%>
 						<tr>
 							<td align=center bgcolor=white width=10%>이 름</td>
-							<td bgcolor=white>${Read.f_board_id }</td>
+							<td bgcolor=white>${Read.f_board_number }</td>
 							<td align=center bgcolor=white width=10%>등록날짜</td>
-							<td bgcolor=white>${Read.f_board_firstdate }</td>
+							<td bgcolor=white>${Read.f_board_date }</td>
 						</tr>
 						<tr>
 							<td align=center bgcolor=white width=10%>메 일</td>
@@ -85,23 +86,14 @@ th {
 
 				</div>
 
-
-
 				<!-- 본문 -->
-				<p>${Read.f_board_content }</p>
+				<textarea name=content>${Read.f_board_content }</textarea>
 
-
-
-				<br /> <br /> <br /> <br />
 				<hr />
 				<div align="center">
 				<input type="button" onclick="window.location='board_list.do'" value="목 록">
-				<input type="button" onclick="window.location='board_modify.jsp?id=${Read.f_board_number}'" value="수 정">
-				<input id="a1" type="button" onclick="window.location='board_delete.do?id=${Read.f_board_number}'" value="삭 제">
-				
-				<%=  %>
-				
-				
+				<input type="button" onclick="" value="수 정">
+				<input type="button" onclick="window.location='board_delete.do?id=${Read.f_board_number}'" value="삭 제">
 				</div>
 				<br /> <br /> <br /> <br />
 				

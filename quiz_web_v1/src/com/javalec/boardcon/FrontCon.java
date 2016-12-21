@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 /**
  * Servlet implementation class FrontCon
  */
@@ -52,6 +53,9 @@ public class FrontCon extends HttpServlet {
 		BListCon listcon = null;
 		BReadCon readcon = null;
 		BInsertCon insertcon = null;
+		BDeleteCon deletecon = null;
+		BModifyCon modifycon = null;
+		
 		
 		String uri = request.getRequestURI();
 		String conPath = request.getContextPath();
@@ -67,16 +71,28 @@ public class FrontCon extends HttpServlet {
 			viewPage = "board_list.jsp";
 		}
 		
-		if(com.equals("/board/board_read.do")) {
+		else if(com.equals("/board/board_read.do")) {
 			readcon = new BReadCon();
 			readcon.execute(request, response);
 			viewPage = "board_read.jsp";
 		}
 		
-		if(com.equals("/board/board_insert.do")) {
+		else if(com.equals("/board/board_insert.do")) {
 			insertcon = new BInsertCon();
 			insertcon.execute(request, response);
 			viewPage = "board_list.do";
+		}
+		
+		else if(com.equals("/board/board_delete.do")) {
+			deletecon = new BDeleteCon();
+			deletecon.execute(request, response);
+			viewPage = "board_list.do";
+		}
+		
+		else if(com.equals("/board/board_modify.do")) {
+			modifycon = new BModifyCon();
+			modifycon.execute(request, response);
+			viewPage = "list.do";
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);

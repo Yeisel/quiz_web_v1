@@ -25,7 +25,7 @@ public class BDto {
 		this.f_board_content = f_board_content;
 		this.f_board_id = f_board_id;
 		this.f_board_count = f_board_count;
-		this.f_board_date = f_board_firstdate;
+		this.f_board_firstdate = f_board_firstdate;
 		this.f_board_date = f_board_date;
 		this.f_board_good = f_board_good;
 		this.f_board_bad = f_board_bad;
@@ -120,7 +120,6 @@ public class BDto {
 	public void setF_board_depth(int f_board_depth) {
 		this.f_board_depth = f_board_depth;
 	}
-	
-	
+
 	
 }
