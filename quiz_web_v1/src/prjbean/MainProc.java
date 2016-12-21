@@ -2,6 +2,7 @@ package prjbean;
 
 import java.io.IOException;
 import java.sql.*;
+import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
+import prjdata.QuizProductDTO;
 import prjdata.QuizUserDTO;
 
 public class MainProc extends HttpServlet {
@@ -230,6 +232,42 @@ public class MainProc extends HttpServlet {
 		}
 	}
 	
+	// shop 메인 상품목록 불러오기
+		public ArrayList getProductList(){
+			
+			ArrayList list = new ArrayList();
+			String sql = null;
+			sql = "select * from product";
+			
+			try {
+				con = ds.getConnection();
+				pstmt = con.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				
+				while(rs.next()){
+					QuizProductDTO dto = new QuizProductDTO();
+					
+					dto.setProduct_Number(rs.getInt("product_Number"));
+					dto.setProduct_Name(rs.getString("product_Name"));
+					dto.setProduct_Price(rs.getInt("product_Price"));
+					dto.setProduct_Image(rs.getString("product_Image"));
+					dto.setProduct_Stock(rs.getInt("product_Stock"));
+					dto.setProduct_Company(rs.getString("product_Company"));
+					dto.setProduct_Contents(rs.getString("product_Contents"));
+
+					list.add(dto);
+				}
+				
+			} catch (SQLException err) {
+				System.out.println("getBoardList() : " + err);
+			}
+			finally{
+				freeConnection();
+			}
+			return list;			
+		}
+	
+	// 인스턴스 클로즈 메서드
 	public void freeConnection(){
 		if(rs != null){try{rs.close();}catch(Exception err){}}
 		if(pstmt != null){try{pstmt.close();}catch(Exception err){}}

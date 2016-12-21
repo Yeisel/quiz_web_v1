@@ -26,6 +26,19 @@ strong, b{
 	font-family: "맑은 고딕";	
 	
 }
+#header {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		border-bottom: solid 5px #f56a6a;
+		padding: 2em 0 0em 0;
+		position: relative;
+}
+#main > .inner > section {
+				padding: 2em 0 4em 0 ;
+				border-top: solid 2px rgba(210, 215, 217, 0.75);
+}
 </style>
 </head>
 	<body>
@@ -73,7 +86,7 @@ strong, b{
 					</div>
 
 				<!-- Sidebar -->
-					<div id="sidebar">
+				<div id="sidebar">
 						<div class="inner">
 
 							<!-- login -->
@@ -86,7 +99,7 @@ strong, b{
 %>	
 									<form method="post" action="login.do">
 										<input type="text" name="user_Id" id="user_Id" placeholder="Id" />
-										<input type="text" name="user_Pw" id="user_Pw" placeholder="Password" /><br/>
+										<input type="password" name="user_Pw" id="user_Pw" placeholder="Password" /><br/>
 										<button type="submit"><strong style="font-size:13px; color:red;">로그인</strong></button>
 									</form>
 									<a href="javascript:fnPageMove('mypage/join_new.jsp')" class="button"><strong style="font-size:13px; color:gray;">회원가입</strong></a>

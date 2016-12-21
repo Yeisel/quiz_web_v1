@@ -26,8 +26,8 @@
 		else{
 %>
 			<script>
-				alert("비밀번호를 다시 확인 해 주세요. 집으로 돌아갑니다.");
-				location.href="javascript:history.back()";
+				alert("비밀번호를 다시 확인 해 주세요.");
+				location.href="javascript:parent.fnPageMove('mypage/join_new.jsp')";
 			</script>
 <%
 		}
@@ -35,7 +35,7 @@
 	else{
 %>
 		<script>
-			alert("약관에 동의하지 않으면 회원 가입을 할 수 없습니다. 집으로 돌아갑니다.");
+			alert("약관에 동의하지 않으면 회원 가입을 할 수 없습니다.");
 			location.href="javascript:parent.fnPageMove('mypage/join_new.jsp')";
 		</script>
 <%
