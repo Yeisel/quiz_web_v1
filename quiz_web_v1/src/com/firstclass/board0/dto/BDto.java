@@ -1,4 +1,4 @@
-package com.javalec.boardcon;
+package com.firstclass.board0.dto;
 
 public class BDto {
 	int f_board_number;
@@ -15,7 +15,7 @@ public class BDto {
 	
 	
 	public BDto() {}
-
+	
 	public BDto(int f_board_number, String f_board_title, String f_board_content, String f_board_id,
 			int f_board_count, String f_board_firstdate, String f_board_date, int f_board_good, int f_board_bad, int f_board_pos,
 			int f_board_depth) {

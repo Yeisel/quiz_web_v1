@@ -96,15 +96,35 @@ th {
 				<hr />
 				<div align="center">
 				<input type="button" onclick="window.location='board_list.do'" value="목 록">
-				<input type="button" onclick="window.location='board_modify.jsp?id=${Read.f_board_number}'" value="수 정">
+				<input type="button" onclick="window.location='board_modify_view.do?idx=${Read.f_board_number}'" value="수 정">
 				<input id="a1" type="button" onclick="window.location='board_delete.do?id=${Read.f_board_number}'" value="삭 제">
-				
-				<%=  %>
-				
-				
 				</div>
-				<br /> <br /> <br /> <br />
 				
+
+				<br /> <br />
+				<!-- Break -->
+				<p>댓글을 남겨주세요</p>
+				<div class="12u$">
+					<textarea id="f_content" name="" placeholder="Enter your message" rows="3"></textarea>
+				
+				<br>
+				<span style="float: right">
+					<a href="#" class="button special" onclick="window.location='board_insert.jsp'">댓글달기</a>
+				</span>
+				<br>
+				</div>
+				<hr>
+				<p> 댓글1 </p>
+				<hr>
+				<p> 댓글1 </p>
+				<hr>
+				<p> 댓글1 </p>
+				<hr>
+				<p> 댓글1 </p>
+				<hr>
+				<p> 댓글1 </p>
+				
+				<br /> <br /> <br /> <br />
 				<ul class="pagination" align="center">
 					<li><span class="button disabled">Prev</span></li>
 					<li><a href="#" class="page active">1</a></li>
@@ -117,7 +137,7 @@ th {
 				</ul>
 
 
-				<br /> <br />
+				
 </body>
 <!-- Scripts -->
 <script src="../assets/js/jquery.min.js"></script>

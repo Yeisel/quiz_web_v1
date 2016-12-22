@@ -1,4 +1,4 @@
-package com.javalec.boardcon;
+package com.firstclass.board0.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,16 +11,18 @@ import javax.sql.DataSource;
 
 import org.omg.CORBA.Request;
 
+import com.firstclass.board0.dto.BDto;
+
 
 
 
 public class BDao {
 
 	DataSource dataSource;
-	
+
 	public BDao() {
 		// TODO Auto-generated constructor stub
-		
+
 		try {
 			Context context = new InitialContext();
 			dataSource = (DataSource) context.lookup("java:comp/env/jdbc/mysql");
@@ -29,26 +31,26 @@ public class BDao {
 			e.printStackTrace();
 		}
 	}
-	
+
 
 	public ArrayList<BDto> list() {
-		
+
 		System.out.println("list start...");
-		
+
 		ArrayList<BDto> dtos = new ArrayList<BDto>();
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
-		
+
 		try {
 			connection = dataSource.getConnection();
-			
+
 			String query = "select * from f_board";
 			preparedStatement = connection.prepareStatement(query);
 			resultSet = preparedStatement.executeQuery();
-			
+
 			while (resultSet.next()) {
-				
+
 				int f_board_number = resultSet.getInt("f_board_number");
 				String f_board_title = resultSet.getString("f_board_title");
 				String f_board_content = resultSet.getString("f_board_content");
@@ -60,15 +62,15 @@ public class BDao {
 				int f_board_bad = resultSet.getInt("f_board_bad");
 				int f_board_pos = resultSet.getInt("f_board_pos");
 				int f_board_depth = resultSet.getInt("f_board_depth");
-				
-				
+
+
 				BDto dto = new BDto(f_board_number, f_board_title, f_board_content, f_board_id, 
 						f_board_count, f_board_firstdate, f_board_date, f_board_good, f_board_bad, f_board_pos, f_board_depth);
-				
+
 				dtos.add(dto);
-				
+
 			}
-			
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -84,16 +86,16 @@ public class BDao {
 		}
 		return dtos;
 	}
-	
-	public void write(String f_board_id, String f_board_title, String f_board_content) {
+
+
+	public int insert(String f_board_id, String f_board_title, String f_board_content) {
 		// TODO Auto-generated method stub
-		
-		
-		System.out.println("write start...");
-		
+		System.out.println("insert start...");
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		int rn =0;
+		// System.out.println(f_board_id);
+		
 		try {
 			connection = dataSource.getConnection();
 			String query = "insert into f_board (f_board_id, f_board_title, f_board_content) values (?, ?, ?)";
@@ -114,30 +116,63 @@ public class BDao {
 				e2.printStackTrace();
 			}
 		}
-		
+		return rn;
 	}
+	
+	public int update(String f_board_id, String f_board_title, String f_board_content, String idx) {
+		// TODO Auto-generated method stub
+		System.out.println("update start...");
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		int rn =0;
+		// System.out.println(f_board_id);
+		
+		try {
+			connection = dataSource.getConnection();
+			String query = "update f_board set f_board_id = ?, f_board_title = ?, f_board_content = ? where f_board_number = ?";
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setString(1, f_board_id);
+			preparedStatement.setString(2, f_board_title);
+			preparedStatement.setString(3, f_board_content);
+			preparedStatement.setString(4, idx);
+			rn = preparedStatement.executeUpdate();
+		} catch (Exception e) {
+			System.out.println(rn);
+			e.printStackTrace();
+		} finally {
+			try {
+				if(preparedStatement != null) preparedStatement.close();
+				if(connection != null) connection.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+				e2.printStackTrace();
+			}
+		}
+		return rn;
+	}
+
 	
 	public BDto Read(String idx) {
 		// TODO Auto-generated method stub
-		
+
 		System.out.println("read start");
-		
+
 		upCount(idx);
-		
+
 		BDto dto = null;
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
-		
+
 		try {
-			
+
 			connection = dataSource.getConnection();
-			
+
 			String query = "select * from f_board where f_board_number = ?";
 			preparedStatement = connection.prepareStatement(query);
 			preparedStatement.setInt(1, Integer.parseInt(idx));
 			resultSet = preparedStatement.executeQuery();
-			
+
 			if(resultSet.next()) {
 
 				int f_board_number = resultSet.getInt("f_board_number");
@@ -151,11 +186,11 @@ public class BDao {
 				int f_board_bad = resultSet.getInt("f_board_bad");
 				int f_board_pos = resultSet.getInt("f_board_pos");
 				int f_board_depth = resultSet.getInt("f_board_depth");
-				
+
 				dto = new BDto(f_board_number, f_board_title, f_board_content, f_board_id, 
 						f_board_count, f_board_firstdate, f_board_date, f_board_good, f_board_bad, f_board_pos, f_board_depth);
 			}
-			
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -171,22 +206,22 @@ public class BDao {
 		}
 		return dto;
 	}
-	
+
 	private void upCount(String idx) {
 		System.out.println("upcount start...");
 		// TODO Auto-generated method stub
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
-		
+
 		try {
 			connection = dataSource.getConnection();
 			String query = "update f_board set f_board_count = f_board_count + 1 where f_board_number = ?";
 			preparedStatement = connection.prepareStatement(query);
 			preparedStatement.setString(1, idx);
-			
+
 			int rn = preparedStatement.executeUpdate();
 			System.out.println(rn);
-					
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -200,22 +235,22 @@ public class BDao {
 			}
 		}
 	}
-	
+
 	public void delete(String id) {
 		// TODO Auto-generated method stub
-		
-		
+
+
 		System.out.println("delete start...");
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		try {
-			
+
 			connection = dataSource.getConnection();
 			String query = "delete from f_board where f_board_number = ?";
 			preparedStatement = connection.prepareStatement(query);
 			preparedStatement.setInt(1, Integer.parseInt(id));
 			int rn = preparedStatement.executeUpdate();
-			
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -229,24 +264,24 @@ public class BDao {
 			}
 		}
 	}
-	
+
 	public void modify(String bId, String bName, String bTitle, String bContent) {
 		// TODO Auto-generated method stub
-		
+
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
-		
+
 		try {
 			connection = dataSource.getConnection();
-			
-			String query = "update mvc_board set bName = ?, bTitle = ?, bContent = ? where bId = ?";
+
+			String query = "update f_board set bTitle = ?, bContent = ? where bId = ?";
 			preparedStatement = connection.prepareStatement(query);
 			preparedStatement.setString(1, bName);
 			preparedStatement.setString(2, bTitle);
 			preparedStatement.setString(3, bContent);
 			preparedStatement.setInt(4, Integer.parseInt(bId));
 			int rn = preparedStatement.executeUpdate();
-			
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -260,5 +295,5 @@ public class BDao {
 			}
 		}
 	}
-	
+
 }

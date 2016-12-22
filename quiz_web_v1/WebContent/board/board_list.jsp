@@ -57,9 +57,9 @@ th {text-align: left;}
 					<table>
 						<thead>
 							<tr>
-								<th width="5%"><t2>선택</t2></th>
+								<!-- <th width="5%"><t2>선택</t2></th>-->
 								<th width="5%"><t2>번호</t2></th>
-								<th width="50%"><t2>게시물 제목</t2></th>
+								<th width="55%"><t2>게시물 제목</t2></th>
 								<th width="10%"><t2>게시자</t2></th>
 								<th width="10%"><t2>조회수</t2></th>
 								<th width="15%"><t2>게시일</t2></th>
@@ -69,14 +69,14 @@ th {text-align: left;}
 
 						<c:forEach items="${list}" var="dto">
 							<tr>
-								<tr height="25" align="center">
-								<td style="text-align: left">
+							<tr height="25" align="center">
+								<!-- <td style="text-align: left">
 									<div class="6u$ 12u$(small)">
 										<input type="checkbox" id="select${dto.f_board_number}"
 											name="select"> 
 										<label for="select${dto.f_board_number}"></label>
 									</div>
-								</td>
+								</td>-->
 								<td>${dto.f_board_number}</td>
 								<td><a href="board_read.do?idx=${dto.f_board_number}">${dto.f_board_title}</a></td>
 								<td>${dto.f_board_id}</td>
@@ -84,9 +84,7 @@ th {text-align: left;}
 								<td>${dto.f_board_firstdate}</td>
 								<td>${dto.f_board_good}</td>
 							</tr>
-							
 
-						
 						</c:forEach>
 
 
@@ -113,7 +111,7 @@ th {text-align: left;}
 
 				<ul class="pagination" align="center">
 					<li><span class="button disabled">이전</span></li>
-					<li><a href="#" class="page active" onclick="window.location ='board_list.do?page=1'">1.</a></li>
+					<li><a href="#" class="page active" onclick="window.location ='board_list.do?page=1'">1</a></li>
 					<li><a href="#" class="page" onclick="window.location ='board_list.do?page=2'">2</a></li>
 					<li><a href="#" class="page" onclick="window.location ='board_list.do?page=3'">3</a></li>
 					<li><a href="#" class="page" onclick="window.location ='board_list.do?page=4'">4</a></li>

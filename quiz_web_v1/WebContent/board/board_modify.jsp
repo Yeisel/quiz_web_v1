@@ -37,6 +37,49 @@ th {
 	text-align: left;
 }
 </style>
+<script src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript">
+	function writeCheck() {
+		
+		var idx = $("#idx").val();
+		var id = $("#f_id").val();
+		var title = $("#f_title").val();
+		var content = $("#f_content").val();
+		
+		console.log(idx)
+		console.log(id)
+		console.log(title)
+		console.log(content)
+		
+		var requestData = {
+			"idx" : idx,
+			"f_board_id" : id,
+			"f_board_title" : title,
+			"f_board_content" : content
+		};
+		
+		
+		if(title=="" || content==""){
+			alert("내용을 입력하세요");			
+		} else {
+			
+		$.ajax({
+			url : "/quiz_web_v1/board/board_modify_update.do",
+			type : "post",
+			data : requestData,
+			//contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+			success : function(result) {
+				if (result == 1) {
+					alert("수정된 글이 등록되었습니다.");
+					location.href = "/quiz_web_v1/board/board_list.do";
+				} else {
+					alert("fail...");
+				}
+			}
+		});
+		}
+	}
+</script>
 
 <body>
 
@@ -58,7 +101,9 @@ th {
 				<hr class="major" />
 
 				<!-- Content -->
-
+				<input type="hidden" id="idx" value="${Read.f_board_number }"/>
+				<input type="hidden" id="f_id" value="${Read.f_board_id }"/>
+				
 				<h2 id="content">${Read.f_board_title }</h2>
 
 				<!-- Table -->
@@ -66,7 +111,7 @@ th {
 					<table border=0 cellpadding=3 cellspacing=0 width=100%>
 						<tr>
 							<td align=center bgcolor=white width=10%>이 름</td>
-							<td bgcolor=white>${Read.f_board_number }</td>
+							<td bgcolor=white >${Read.f_board_id }</td>
 							<td align=center bgcolor=white width=10%>등록날짜</td>
 							<td bgcolor=white>${Read.f_board_date }</td>
 						</tr>
@@ -78,7 +123,7 @@ th {
 						</tr>
 						<tr>
 							<td align=center bgcolor=white>제 목</td>
-							<td bgcolor=white colspan=3>${Read.f_board_title }</td>
+							<td bgcolor=white colspan=3><textarea id="f_title" name=title rows="1">${Read.f_board_title }</textarea></td>
 						</tr>
 
 
@@ -87,12 +132,12 @@ th {
 				</div>
 
 				<!-- 본문 -->
-				<textarea name=content>${Read.f_board_content }</textarea>
+				<textarea id="f_content" name=content rows="10">${Read.f_board_content }</textarea>
 
 				<hr />
 				<div align="center">
 				<input type="button" onclick="window.location='board_list.do'" value="목 록">
-				<input type="button" onclick="" value="수 정">
+				<input type="button" value="글올리기" class="special" onclick="javascript:writeCheck();" />
 				<input type="button" onclick="window.location='board_delete.do?id=${Read.f_board_number}'" value="삭 제">
 				</div>
 				<br /> <br /> <br /> <br />
